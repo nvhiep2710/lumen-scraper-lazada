@@ -62,8 +62,6 @@ class ScrapeDataController extends Controller
                 if ($result) continue;
 
                 $detail = isset($this->scrape_lazada_product_detail($product)['product_detail']);
-                dd($detail);
-                return $detail;
                 $this->db_insert_product($detail);
             }
             sleep(60);
@@ -161,42 +159,43 @@ class ScrapeDataController extends Controller
         if ($get_title == TRUE) return $data->product->title;
 
         $product_name = trim(substr($product_id, 0, strpos($product_id, '.html')));
-        $sale_price = (isset_value($data->skuInfos->{'0'}->price->salePrice) ? $data->skuInfos->{'0'}->price->salePrice->value : $data->skuInfos->{'0'}->price->originalPrice->value);
+        $sale_price = (isset($data->skuInfos->{'0'}->price->salePrice) ? $data->skuInfos->{'0'}->price->salePrice->value : $data->skuInfos->{'0'}->price->originalPrice->value);
         $product_detail = array(
-            'lazada_item_id' => isset_value($data->primaryKey->itemId),
-            'url' => isset_value($data->htmlRender->msiteShare->url),
-            'categories' => isset_value($data->skuInfos->{'0'}->dataLayer->pdt_category),
-            'title' => isset_value($data->product->title),
-            'name' => isset_value($product_name),
-            'image_url' => isset_value($data->htmlRender->msiteShare->image),
-            'short_description' => isset_value($data->product->highlights),
-            'description' => isset_value($data->product->desc),
-            'sku' => isset_value($data->specifications->{$data->primaryKey->skuId}->features->SKU),
+            'lazada_item_id' => isset($data->primaryKey->itemId),
+            'url' => isset($data->htmlRender->msiteShare->url),
+            'categories' => isset($data->skuInfos->{'0'}->dataLayer->pdt_category),
+            'title' => isset($data->product->title),
+            'name' => isset($product_name),
+            'image_url' => isset($data->htmlRender->msiteShare->image),
+            'short_description' => isset($data->product->highlights),
+            'description' => isset($data->product->desc),
+            'sku' => isset($data->specifications->{$data->primaryKey->skuId}->features->SKU),
             'attributes' => $this->_get_lazada_product_properties($data),
             'variations' => $this->_get_lazada_product_options($data),
-            'original_price' => isset_if_empty($data->skuInfos->{'0'}->price->originalPrice->value),
+            'original_price' => isset($data->skuInfos->{'0'}->price->originalPrice->value),
             'sale_price' => $sale_price,
         );
 
 
         // get shipping fees (if exists)
-        $delivery_options = isset_value($data->deliveryOptions->{$data->primaryKey->skuId}, NULL);
-        if ($delivery_options) {
-            $min_fee = 1000;
-            $shipping_title = '';
-            foreach ($delivery_options as $idx => $option) {
-                if (!isset_value($option->fee)) continue;
-                if ($option->feeValue < $min_fee) {
-                    $min_fee = $option->feeValue;
-                    $shipping_title = $option->title;
-                }
-            }
+        // $delivery_options = isset($data->deliveryOptions->{$data->primaryKey->skuId});
+        // dd($delivery_options);
+        // if ($delivery_options) {
+        //     $min_fee = 1000;
+        //     $shipping_title = '';
+        //     foreach ($delivery_options as $idx => $option) {
+        //         if (!isset($option->fee)) continue;
+        //         if ($option->feeValue < $min_fee) {
+        //             $min_fee = $option->feeValue;
+        //             $shipping_title = $option->title;
+        //         }
+        //     }
 
-            $product_detail['shipping'] = array(
-                'title' => $shipping_title,
-                'fee' => ($min_fee == 1000 ? NULL : $min_fee)
-            );
-        }
+        //     $product_detail['shipping'] = array(
+        //         'title' => $shipping_title,
+        //         'fee' => ($min_fee == 1000 ? NULL : $min_fee)
+        //     );
+        // }
 
         $result['product_detail'] = $product_detail;
         return $result;
@@ -224,27 +223,27 @@ class ScrapeDataController extends Controller
     function db_insert_product($detail) {
         $result = array('error' => FALSE, 'error_msg' => '', 'response' => NULL);
 
-        if (!is_array_not_empty($detail)) {
+        if (empty($detail)) {
             $result['error'] = TRUE;
             $result['error_msg'] = 'Product detail is empty. Please try again later.';
             return $result;
         }
 
-        $lazada_item_id = isset_if_empty($detail['lazada_item_id'], 0);
-        $prod_title = isset_if_empty($detail['title'], '');
-        $prod_name = isset_if_empty($detail['lazada_item_id'], '');
-        $prod_url = isset_if_empty($detail['url'], '');
-        $prod_short_description = isset_if_empty($detail['short_description'], '');
-        $prod_description = isset_if_empty($detail['description'], '');
-        $original_price = isset_if_empty($detail['original_price'], '');
-        $sale_price = isset_if_empty($detail['sale_price'], '');
-        $stock = isset_if_empty($detail['stock'], 1000); // default value to make product always in stock
-        $sku = isset_if_empty($detail['sku'], '');
-        $image_url = isset_if_empty($detail['image_url'], '');
-        $categories = isset_if_empty($detail['categories'], '');
-        $attributes = isset_if_empty($detail['attributes'], '');
-        $variations = isset_if_empty($detail['variations'], '');
-        if (isset_value($detail['shipping'])) {
+        $lazada_item_id = $detail['lazada_item_id']?$detail['lazada_item_id']:0;
+        $prod_title = $detail['title']?$detail['title']:'';
+        $prod_name = $detail['lazada_item_id']?$detail['lazada_item_id']:'';
+        $prod_url = $detail['url']?$detail['url']:'';
+        $prod_short_description = $detail['short_description']?$detail['short_description']:'';
+        $prod_description = $detail['description']?$detail['description']:'';
+        $original_price = $detail['original_price']?$detail['original_price']:'';
+        $sale_price = $detail['sale_price']?$detail['sale_price']:'';
+        $stock = $detail['stock']?$detail['stock']:1000; // default value to make product always in stock
+        $sku = $detail['sku']?$detail['sku']:'';
+        $image_url = $detail['image_url']?$detail['image_url']:'';
+        $categories = $detail['categories']?$detail['categories']:'';
+        $attributes = $detail['attributes']?$detail['attributes']:'';
+        $variations = $detail['variations']?$detail['variations']:'';
+        if (isset($detail['shipping'])) {
             $shipping_title = $detail['shipping']['title'];
             $shipping_fee = $detail['shipping']['fee'];
         }
@@ -255,7 +254,7 @@ class ScrapeDataController extends Controller
             return $result;
         }
 
-        if (!is_array_not_empty($categories)) {
+        if (!empty($categories)) {
             $categories = array(
                 array(
                     'name' => WOO_UNCATEGORIZED_NAME,
@@ -385,7 +384,7 @@ class ScrapeDataController extends Controller
     function db_set_category($product_id, $categories) {
         $result = array('error' => FALSE, 'error_msg' => '', 'response' => NULL);
         
-        if (!isset_value($product_id) || !is_array_not_empty($categories)) {
+        if (!isset($product_id) || !is_array_not_empty($categories)) {
             $result['error'] = TRUE;
             $result['error_msg'] = 'Invalid parameters. Please try again later.';
             return $result;
@@ -427,7 +426,7 @@ class ScrapeDataController extends Controller
             $fetch = DB::select($sql);
             $new_category_id = $fetch['term_id'];
 
-            if (!isset_value($new_category_id)) {
+            if (!isset($new_category_id)) {
                 $new_category_id = WOO_UNCATEGORIZED_ID;
             }
 
@@ -450,7 +449,7 @@ class ScrapeDataController extends Controller
     function db_set_attribute($product_id, $attributes) {
         $result = array('error' => FALSE, 'error_msg' => '', 'response' => NULL);
 
-        if (!isset_value($product_id) || !is_array_not_empty($attributes)) {
+        if (!isset($product_id) || !is_array_not_empty($attributes)) {
             $result['error'] = TRUE;
             $result['error_msg'] = 'Invalid parameters. Please try again later.';
             return $result;
@@ -683,7 +682,7 @@ class ScrapeDataController extends Controller
                 'INSERT INTO wp_postmeta (post_id, meta_key, meta_value) 
              VALUES 
              (' . $variation_id . ', "_sku","' . $variation['sku'] . '"),
-             (' . $variation_id . ', "_regular_price", ' . isset_if_empty($variation['original_price'], $variation['sale_price']) . '),
+             (' . $variation_id . ', "_regular_price", ' . isset($variation['original_price'], $variation['sale_price']) . '),
              (' . $variation_id . ', "total_sales", 0),
              (' . $variation_id . ', "_tax_status", "taxable"),
              (' . $variation_id . ', "_tax_class", NULL),
@@ -694,7 +693,7 @@ class ScrapeDataController extends Controller
              (' . $variation_id . ', "_downloadable", "no"),
              (' . $variation_id . ', "_download_limit", -1),
              (' . $variation_id . ', "_download_expiry", -1),
-             (' . $variation_id . ', "_stock", '. isset_if_empty($variation['stock'], 1000).'),
+             (' . $variation_id . ', "_stock", '. isset_value($variation['stock'], 1000).'),
              (' . $variation_id . ', "_stock_status", "instock"),
              (' . $variation_id . ', "_wc_average_rating", 0),
              (' . $variation_id . ', "_wc_review_count", 0),
@@ -740,4 +739,86 @@ class ScrapeDataController extends Controller
         return $result;
     }
 
+    /**
+     * get the properties from lazada scrape product result
+     * @param $scrape_data
+     * @return array
+     */
+    private function _get_lazada_product_properties($scrape_data) {
+        $result = array();
+
+        $properties = $scrape_data->productOption->skuBase->properties;
+        foreach ($properties AS $property) {
+            $values = array();
+            foreach ($property->values AS $value) {
+                if (!isset($value->name)) {
+                    // foreach from variation in scrape data
+                    if (strpos($value->vid, '-') == 0) $vid = substr($value->vid, 1);
+                    else $vid = $value->vid;
+
+                    $product_variation = array_filter(
+                        $scrape_data->productOption->skuBase->skus,
+                        function ($e) use ($vid) {
+                            return $e->cartSkuId == $vid;
+                        }
+                    );
+                    sort($product_variation);
+                    $product_title = $this->scrape_lazada_product_detail($product_variation[0]->pagePath, TRUE);
+                    $values[$value->vid] = $product_title;
+                } else $values[$value->vid] = $value->name;
+            }
+
+            $result[$property->pid] = array(
+                'lazada_property_id' => $property->pid,
+                'name' => $property->name,
+                'values' => $values
+            );
+        }
+
+        return $result;
+    }
+
+    /**
+     * get the product options from lazada scrape product result
+     * @param $scrape_data
+     * @return array
+     */
+    private function _get_lazada_product_options($scrape_data) {
+        $result = array();
+
+        $properties = $this->_get_lazada_product_properties($scrape_data);
+        $options = $scrape_data->productOption->skuBase->skus;
+
+        foreach ($options AS $option) {
+            // option info
+            $info = $scrape_data->skuInfos->{$option->skuId};
+
+            if (isset($option->propPath)) {
+                // get option attribute name
+                $attribute = '';
+                foreach (explode(';', $option->propPath) as $item) {
+                    list($attr_id, $attr_vid) = explode(':', $item);
+                    $property = $properties[$attr_id];
+                    $attribute .= $property['name'] . ':' . $property['values'][$attr_vid] . ';';
+                }
+                $attribute = substr($attribute, 0, -1);
+                // end of get option attribute name
+            }
+
+            $sale_price = (isset($info->price->salePrice) ? $info->price->salePrice->value : $info->price->originalPrice->value);
+            $result[$option->skuId] = array(
+                'lazada_option_id' => $option->skuId,
+                'sku' => $option->innerSkuId,
+                'attribute' => isset($attribute),
+                'original_price' => isset($info->price->originalPrice->value, $info->price->salePrice->value),
+                'sale_price' => $sale_price,
+                'stock' => $info->stock,
+                'url' => 'https://lazada.sg' . $option->pagePath,
+                'image_url' => 'https:' . $info->image,
+            );
+        }
+
+        return $result;
+    }
+//    ===============================================================================================
 }
