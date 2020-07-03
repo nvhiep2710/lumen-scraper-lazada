@@ -1,0 +1,1790 @@
+{
+    "mods": {
+        "filter": {
+            "tItemType": "nt_filter",
+            "filterItems": [
+                {
+                    "options": [
+                        {
+                            "value": "shop-monitors",
+                            "title": "Monitors",
+                            "url": "/shop-monitors/?q=se2719hr",
+                            "order": 0,
+                            "id": "102"
+                        }
+                    ],
+                    "name": "category",
+                    "type": "category",
+                    "unfoldRow": "2",
+                    "title": "Related Categories",
+                    "urlKey": "category",
+                    "value": "",
+                    "hidden": false,
+                    "locked": false
+                },
+                {
+                    "pid": "20000",
+                    "options": [
+                        {
+                            "value": "dell",
+                            "title": "Dell",
+                            "order": 0
+                        },
+                        {
+                            "value": "dell-computers",
+                            "title": "Dell Computers",
+                            "order": 0
+                        }
+                    ],
+                    "name": "brand",
+                    "type": "brand",
+                    "unfoldRow": "2",
+                    "title": "Brand",
+                    "urlKey": "ppath",
+                    "value": [],
+                    "hidden": false,
+                    "locked": false
+                },
+                {
+                    "options": [
+                        {
+                            "value": "OS",
+                            "title": "LazMall",
+                            "order": 0
+                        },
+                        {
+                            "value": "FS",
+                            "title": "Free Shipping",
+                            "order": 6
+                        }
+                    ],
+                    "name": "service",
+                    "type": "multiple",
+                    "unfoldRow": "2",
+                    "title": "Service",
+                    "urlKey": "service",
+                    "value": [],
+                    "hidden": false,
+                    "locked": false
+                },
+                {
+                    "options": [
+                        {
+                            "value": "local",
+                            "title": "Singapore",
+                            "order": 0
+                        }
+                    ],
+                    "name": "location",
+                    "type": "multiple",
+                    "unfoldRow": "1",
+                    "title": "Location",
+                    "urlKey": "location",
+                    "value": [],
+                    "hidden": false,
+                    "locked": false
+                },
+                {
+                    "showMin": "Min",
+                    "showMax": "Max",
+                    "name": "price",
+                    "type": "price",
+                    "unfoldRow": "2",
+                    "title": "Price",
+                    "urlKey": "price",
+                    "hidden": false,
+                    "locked": false
+                },
+                {
+                    "name": "rating",
+                    "type": "rating",
+                    "unfoldRow": "2",
+                    "title": "Rating",
+                    "urlKey": "rating",
+                    "value": "0",
+                    "hidden": false,
+                    "locked": false
+                },
+                {
+                    "pid": "40425",
+                    "options": [
+                        {
+                            "value": "40425:114567",
+                            "title": "Free-Sync",
+                            "order": 0
+                        },
+                        {
+                            "value": "40425:40406",
+                            "title": "IPS",
+                            "order": 0
+                        },
+                        {
+                            "value": "40425:21445",
+                            "title": "1080p",
+                            "order": 0
+                        }
+                    ],
+                    "name": "attribute",
+                    "type": "multiple",
+                    "unfoldRow": "0",
+                    "title": "Monitor Feature",
+                    "urlKey": "ppath",
+                    "value": [],
+                    "hidden": false,
+                    "locked": false
+                },
+                {
+                    "pid": "31121",
+                    "options": [
+                        {
+                            "value": "31121:14112",
+                            "title": "5 ms - 10 ms",
+                            "order": 0
+                        },
+                        {
+                            "value": "31121:14117",
+                            "title": "5 ms and below",
+                            "order": 0
+                        }
+                    ],
+                    "name": "attribute",
+                    "type": "multiple",
+                    "unfoldRow": "0",
+                    "title": "Response Time",
+                    "urlKey": "ppath",
+                    "value": [],
+                    "hidden": false,
+                    "locked": false
+                }
+            ],
+            "bizData": "",
+            "pos": 0
+        },
+        "listItems": [
+            {
+                "name": "Dell 27  Full HD Monitor Freesync 75hz SE2719HR",
+                "nid": "505970628",
+                "icons": [
+                    {
+                        "url": "//laz-img-cdn.alicdn.com/tfs/TB1HbRhawFY.1VjSZFnXXcFHXXa-86-28.png",
+                        "domClass": "lazMall",
+                        "alias": "lazMall",
+                        "type": "img",
+                        "style": {
+                            "width": 86.0,
+                            "height": 28.0
+                        },
+                        "group": "1",
+                        "showType": "0",
+                        "order": 0,
+                        "font-size": 0
+                    }
+                ],
+                "utLogMap": {
+                    "x_object_type": "item",
+                    "hyperspace_bts": "tr_bt:3;jinnang_bid:5;doufukuai_bid:4;search_engine_bid:1;gs_jinnang_bid:5;gs_tcbid:2;golden_slots_for_redmart:true;new_rank:7;gs_title_completion:4;gs_shipping_origin:;rerank_size_improvement_bid:;rank_size_improvement_bid:1;degrade_by_user_level:;ul_hit:;sp_common_level_bid:0;sp_common_level_bid_l2:0;sp_common_level_bid_l3:7;rank_optimize:;lang_detect:1;business_bid:3;spell_correct_bid:1;lzd_search_rerank_bid:7;search_recall_bucket_id:4;sp_common_level_bid4:0;use_phrase_v2:0;sp_common_level_bid_l5:0",
+                    "x_item_ids": "505970628",
+                    "x_ad": "1",
+                    "x_object_id": "505970628"
+                },
+                "productUrl": "//www.lazada.sg/products/dell-27-full-hd-monitor-freesync-75hz-se2719hr-i505970628-s1408408036.html?search=1",
+                "image": "https://sg-test-11.slatic.net/p/8a9cfc2d26773053d423f982da23e787.jpg",
+                "price": "259.00",
+                "promotionId": "null",
+                "priceShow": "$259.00",
+                "ratingScore": "4.486486486486487",
+                "review": "37",
+                "installment": "",
+                "tItemType": "nt_product",
+                "location": "Singapore",
+                "cheapest_sku": "505970628_SGAMZ-1408408036",
+                "sku": "505970628_SGAMZ",
+                "skus": [
+                    {
+                        "id": "505970628_SGAMZ-1408408036"
+                    }
+                ],
+                "description": [
+                    "View games, video and files clearly on this 27\" Full HD monitor with thin bezels and a compact footprint that frees up valuable desk space."
+                ],
+                "brandId": "24597",
+                "brandName": "Dell",
+                "sellerId": "100071324",
+                "mainSellerId": "100071324",
+                "sellerName": "Dell Official Store",
+                "thumbs": [
+                    {
+                        "image": "https://sg-test-11.slatic.net/p/8a9cfc2d26773053d423f982da23e787.jpg",
+                        "productUrl": "//www.lazada.sg/products/dell-27-full-hd-monitor-freesync-75hz-se2719hr-i505970628-s1408408036.html?search=1",
+                        "sku": "505970628_SGAMZ",
+                        "skuId": "1408408036"
+                    }
+                ],
+                "restrictedAge": 0,
+                "categories": [
+                    10100380,
+                    102
+                ],
+                "clickTrace": "query:se2719hr;nid:505970628;src:LazadaMainSrp;rn:e589212f974964ee99593abc1c55ab5a;region:sg;sku:505970628_SGAMZ;price:259.00;client:desktop;supplier_id:100071324;asc_category_id:102;item_id:505970628;sku_id:1408408036;shop_id:83591",
+                "addToCartSkus": [
+                    {
+                        "sku": "505970628_SGAMZ-1408408036",
+                        "skuId": "1408408036",
+                        "count": 0
+                    }
+                ],
+                "itemId": "505970628",
+                "voucherId": "9484205871324\u001d9734684500001\u001d9783217700001\u001d9784024300001\u001d9282627571324\u001d9278627271324\u001d9273823771324",
+                "skuId": "1408408036",
+                "inStock": true,
+                "isAD": 0
+            },
+            {
+                "name": "DELL SE2719HR 27 IPS Monitor (1920 x 1080) SE 2719HR 27-inch Full HD 1080p Anti-Glare LED-Backlit LCD Monitor (Replacement of SE2719H )",
+                "nid": "701998937",
+                "icons": [],
+                "utLogMap": {
+                    "x_object_type": "item",
+                    "hyperspace_bts": "tr_bt:3;jinnang_bid:5;doufukuai_bid:4;search_engine_bid:1;gs_jinnang_bid:5;gs_tcbid:2;golden_slots_for_redmart:true;new_rank:7;gs_title_completion:4;gs_shipping_origin:;rerank_size_improvement_bid:;rank_size_improvement_bid:1;degrade_by_user_level:;ul_hit:;sp_common_level_bid:0;sp_common_level_bid_l2:0;sp_common_level_bid_l3:7;rank_optimize:;lang_detect:1;business_bid:3;spell_correct_bid:1;lzd_search_rerank_bid:7;search_recall_bucket_id:4;sp_common_level_bid4:0;use_phrase_v2:0;sp_common_level_bid_l5:0",
+                    "x_item_ids": "701998937",
+                    "x_ad": "1",
+                    "x_object_id": "701998937"
+                },
+                "productUrl": "//www.lazada.sg/products/dell-se2719hr-27-ips-monitor-1920-x-1080-se-2719hr-27-inch-full-hd-1080p-anti-glare-led-backlit-lcd-monitor-replacement-of-se2719h-i701998937-s2189850872.html?search=1",
+                "image": "https://sg-test-11.slatic.net/p/f664f38e7700a930a8e44238ebc8c8f4.png",
+                "originalPrice": "299.00",
+                "originalPriceShow": "$299.00",
+                "price": "245.00",
+                "promotionId": "null",
+                "priceShow": "$245.00",
+                "discount": "-18%",
+                "ratingScore": "4.75",
+                "review": "4",
+                "installment": "",
+                "tItemType": "nt_product",
+                "location": "Singapore",
+                "cheapest_sku": "701998937_SGAMZ-2189850872",
+                "sku": "701998937_SGAMZ",
+                "skus": [
+                    {
+                        "id": "701998937_SGAMZ-2189850872"
+                    }
+                ],
+                "description": [
+                    "Ports &amp; Slots: 1 x Power Connector; 1 x HDMI, 1 x VGA",
+                    "Cables Included: 1 x Power Cable; 1 x HDMI",
+                    "Device Type: LED-Backlit LCD Monitor 27&quot; Display/TFT active matrix with Anti-Glare 3H Hardness",
+                    "Panel Type: IPS",
+                    "Native Resolution: Full HD (1080p) 1920 x 1080 (VGA: 60 Hz, HDMI: 75 Hz)",
+                    "Aspect Ratio: 16:9",
+                    "Pixel Pitch: 0.3114 mm",
+                    "Brightness: 300 cd/m&sup2;",
+                    "Contrat Ratio: 1000:1 / 8000000:1 (dynamic)",
+                    "Response Time: 8 ms (gray-to-gray normal); 4 ms (gray-to-gray extreme)",
+                    "Color Support: 16.7m Colors",
+                    "Input Connectors: HDMI; VGA",
+                    "Display Position Adjustments: Tilt",
+                    "Dimensions: 24.1 in x 7.4 in x 17.9 in with stand "
+                ],
+                "brandId": "24597",
+                "brandName": "Dell",
+                "sellerId": "1134294293",
+                "mainSellerId": "1134294293",
+                "sellerName": "Top 200 Items",
+                "thumbs": [
+                    {
+                        "image": "https://sg-test-11.slatic.net/p/f664f38e7700a930a8e44238ebc8c8f4.png",
+                        "productUrl": "//www.lazada.sg/products/dell-se2719hr-27-ips-monitor-1920-x-1080-se-2719hr-27-inch-full-hd-1080p-anti-glare-led-backlit-lcd-monitor-replacement-of-se2719h-i701998937-s2189850872.html?search=1",
+                        "sku": "701998937_SGAMZ",
+                        "skuId": "2189850872"
+                    }
+                ],
+                "restrictedAge": 0,
+                "categories": [
+                    10100380,
+                    102
+                ],
+                "clickTrace": "query:se2719hr;nid:701998937;src:LazadaMainSrp;rn:e589212f974964ee99593abc1c55ab5a;region:sg;sku:701998937_SGAMZ;price:245.00;client:desktop;supplier_id:1134294293;asc_category_id:102;item_id:701998937;sku_id:2189850872;shop_id:576197",
+                "addToCartSkus": [
+                    {
+                        "sku": "701998937_SGAMZ-2189850872",
+                        "skuId": "2189850872",
+                        "count": 0
+                    }
+                ],
+                "itemId": "701998937",
+                "voucherId": "",
+                "skuId": "2189850872",
+                "inStock": true,
+                "isAD": 0
+            },
+            {
+                "name": "Dell 27 Monitor: SE2719HR",
+                "nid": "655906975",
+                "icons": [],
+                "utLogMap": {
+                    "x_object_type": "item",
+                    "hyperspace_bts": "tr_bt:3;jinnang_bid:5;doufukuai_bid:4;search_engine_bid:1;gs_jinnang_bid:5;gs_tcbid:2;golden_slots_for_redmart:true;new_rank:7;gs_title_completion:4;gs_shipping_origin:;rerank_size_improvement_bid:;rank_size_improvement_bid:1;degrade_by_user_level:;ul_hit:;sp_common_level_bid:0;sp_common_level_bid_l2:0;sp_common_level_bid_l3:7;rank_optimize:;lang_detect:1;business_bid:3;spell_correct_bid:1;lzd_search_rerank_bid:7;search_recall_bucket_id:4;sp_common_level_bid4:0;use_phrase_v2:0;sp_common_level_bid_l5:0",
+                    "x_item_ids": "655906975",
+                    "x_ad": "1",
+                    "x_object_id": "655906975"
+                },
+                "productUrl": "//www.lazada.sg/products/dell-27-monitor-se2719hr-i655906975-s1987128787.html?search=1",
+                "image": "https://sg-test-11.slatic.net/p/fe24f185f44608b3a9d5ca1025bfa920.jpg",
+                "price": "259.00",
+                "promotionId": "null",
+                "priceShow": "$259.00",
+                "ratingScore": "4.833333333333333",
+                "review": "12",
+                "installment": "",
+                "tItemType": "nt_product",
+                "location": "Singapore",
+                "cheapest_sku": "655906975_SGAMZ-1987128787",
+                "sku": "655906975_SGAMZ",
+                "skus": [
+                    {
+                        "id": "655906975_SGAMZ-1987128787"
+                    }
+                ],
+                "description": [
+                    "View games, video and files clearly on this 27&quot; Full HD monitor with thin bezels and a compact footprint that frees up valuable desk space."
+                ],
+                "brandId": "24597",
+                "brandName": "Dell",
+                "sellerId": "1133679495",
+                "mainSellerId": "1133679495",
+                "sellerName": "SwiftWare",
+                "thumbs": [
+                    {
+                        "image": "https://sg-test-11.slatic.net/p/fe24f185f44608b3a9d5ca1025bfa920.jpg",
+                        "productUrl": "//www.lazada.sg/products/dell-27-monitor-se2719hr-i655906975-s1987128787.html?search=1",
+                        "sku": "655906975_SGAMZ",
+                        "skuId": "1987128787"
+                    }
+                ],
+                "restrictedAge": 0,
+                "categories": [
+                    10100380,
+                    102
+                ],
+                "clickTrace": "query:se2719hr;nid:655906975;src:LazadaMainSrp;rn:e589212f974964ee99593abc1c55ab5a;region:sg;sku:655906975_SGAMZ;price:259.00;client:desktop;supplier_id:1133679495;asc_category_id:102;item_id:655906975;sku_id:1987128787;shop_id:473414",
+                "addToCartSkus": [
+                    {
+                        "sku": "655906975_SGAMZ-1987128787",
+                        "skuId": "1987128787",
+                        "count": 0
+                    }
+                ],
+                "itemId": "655906975",
+                "voucherId": "9644448379495",
+                "skuId": "1987128787",
+                "inStock": true,
+                "isAD": 0
+            },
+            {
+                "name": "Dell 27 Monitor: SE2719HR",
+                "nid": "700702876",
+                "icons": [],
+                "utLogMap": {
+                    "x_object_type": "item",
+                    "hyperspace_bts": "tr_bt:3;jinnang_bid:5;doufukuai_bid:4;search_engine_bid:1;gs_jinnang_bid:5;gs_tcbid:2;golden_slots_for_redmart:true;new_rank:7;gs_title_completion:4;gs_shipping_origin:;rerank_size_improvement_bid:;rank_size_improvement_bid:1;degrade_by_user_level:;ul_hit:;sp_common_level_bid:0;sp_common_level_bid_l2:0;sp_common_level_bid_l3:7;rank_optimize:;lang_detect:1;business_bid:3;spell_correct_bid:1;lzd_search_rerank_bid:7;search_recall_bucket_id:4;sp_common_level_bid4:0;use_phrase_v2:0;sp_common_level_bid_l5:0",
+                    "x_item_ids": "700702876",
+                    "x_ad": "1",
+                    "x_object_id": "700702876"
+                },
+                "productUrl": "//www.lazada.sg/products/dell-27-monitor-se2719hr-i700702876-s2183644643.html?search=1",
+                "image": "https://sg-test-11.slatic.net/p/a1d7d15c4538438ce4feb4442678570e.png",
+                "originalPrice": "259.00",
+                "originalPriceShow": "$259.00",
+                "price": "238.80",
+                "promotionId": "null",
+                "priceShow": "$238.80",
+                "discount": "-8%",
+                "ratingScore": "4.8",
+                "review": "5",
+                "installment": "",
+                "tItemType": "nt_product",
+                "location": "Singapore",
+                "cheapest_sku": "700702876_SGAMZ-2183644643",
+                "sku": "700702876_SGAMZ",
+                "skus": [
+                    {
+                        "id": "700702876_SGAMZ-2183644643"
+                    }
+                ],
+                "description": [
+                    "View games, video and files clearly on this 27&quot; Full HD monitor with thin bezels and a compact footprint that frees up valuable desk space."
+                ],
+                "brandId": "24597",
+                "brandName": "Dell",
+                "sellerId": "100030093",
+                "mainSellerId": "100030093",
+                "sellerName": "ITSG",
+                "thumbs": [
+                    {
+                        "image": "https://sg-test-11.slatic.net/p/a1d7d15c4538438ce4feb4442678570e.png",
+                        "productUrl": "//www.lazada.sg/products/dell-27-monitor-se2719hr-i700702876-s2183644643.html?search=1",
+                        "sku": "700702876_SGAMZ",
+                        "skuId": "2183644643"
+                    }
+                ],
+                "restrictedAge": 0,
+                "categories": [
+                    10100380,
+                    102
+                ],
+                "clickTrace": "query:se2719hr;nid:700702876;src:LazadaMainSrp;rn:e589212f974964ee99593abc1c55ab5a;region:sg;sku:700702876_SGAMZ;price:238.80;client:desktop;supplier_id:100030093;asc_category_id:102;item_id:700702876;sku_id:2183644643;shop_id:507",
+                "addToCartSkus": [
+                    {
+                        "sku": "700702876_SGAMZ-2183644643",
+                        "skuId": "2183644643",
+                        "count": 0
+                    }
+                ],
+                "itemId": "700702876",
+                "voucherId": "",
+                "skuId": "2183644643",
+                "inStock": true,
+                "isAD": 0
+            },
+            {
+                "name": "DYNACORE - Dell SE2719HR 27 Inch FHD IPS Monitor,75hz screen.",
+                "nid": "310340185",
+                "icons": [
+                    {
+                        "url": "//laz-img-cdn.alicdn.com/tfs/TB1QTkMXG67gK0jSZFHXXa9jVXa-45-28.png",
+                        "domClass": "freeShipping",
+                        "alias": "freeShipping",
+                        "type": "img",
+                        "style": {
+                            "width": 45.0,
+                            "height": 28.0
+                        },
+                        "group": "2",
+                        "showType": "0",
+                        "order": 0,
+                        "font-size": 0
+                    }
+                ],
+                "utLogMap": {
+                    "x_object_type": "item",
+                    "hyperspace_bts": "tr_bt:3;jinnang_bid:5;doufukuai_bid:4;search_engine_bid:1;gs_jinnang_bid:5;gs_tcbid:2;golden_slots_for_redmart:true;new_rank:7;gs_title_completion:4;gs_shipping_origin:;rerank_size_improvement_bid:;rank_size_improvement_bid:1;degrade_by_user_level:;ul_hit:;sp_common_level_bid:0;sp_common_level_bid_l2:0;sp_common_level_bid_l3:7;rank_optimize:;lang_detect:1;business_bid:3;spell_correct_bid:1;lzd_search_rerank_bid:7;search_recall_bucket_id:4;sp_common_level_bid4:0;use_phrase_v2:0;sp_common_level_bid_l5:0",
+                    "x_item_ids": "310340185",
+                    "x_ad": "1",
+                    "x_object_id": "310340185"
+                },
+                "productUrl": "//www.lazada.sg/products/dynacore-dell-se2719hr-27-inch-fhd-ips-monitor75hz-screen-i310340185-s564978511.html?search=1",
+                "image": "https://sg-test-11.slatic.net/p/503c73cd636c9166960ba65b266eb4f9.jpg",
+                "originalPrice": "359.00",
+                "originalPriceShow": "$359.00",
+                "price": "244.80",
+                "promotionId": "null",
+                "priceShow": "$244.80",
+                "discount": "-32%",
+                "ratingScore": "4.768115942028985",
+                "review": "69",
+                "installment": "",
+                "tItemType": "nt_product",
+                "location": "Singapore",
+                "cheapest_sku": "310340185_SGAMZ-564978511",
+                "sku": "310340185_SGAMZ",
+                "skus": [
+                    {
+                        "id": "310340185_SGAMZ-564978511"
+                    }
+                ],
+                "description": [
+                    "Screen Size:27 Inch",
+                    "Maximum Resolution:1920 x 1080 at 75Hz",
+                    "Hdmi 75hz, Vga 60hz",
+                    "Brightness:350 cd/m",
+                    "Contrast Ratio:1000:1",
+                    "Touch Screen:No",
+                    "Elegant touches:The thin bezels offer a sleek, modern look that complements any space.",
+                    "Compact and solid:The stand is now 10% smalleri, freeing up desk space without compromising sturdiness. A built-in power supply unit further reduces clutter.",
+                    "Choose your view:Easily tilt the monitor to get just the right viewing angle.",
+                    "Easy on the eyes:Increase viewing comfort by minimizing blue light with Dell&rsquo;s Comfort View, and reduce distractions with a flicker-free, anti-glare screen.",
+                    "For tear-free visuals during gameplay, this AMD Radeon FreeSync&trade; compatible monitor features up to 75 Hz refresh."
+                ],
+                "brandId": "24597",
+                "brandName": "Dell",
+                "sellerId": "20957",
+                "mainSellerId": "20957",
+                "sellerName": "DYNACORE",
+                "thumbs": [
+                    {
+                        "image": "https://sg-test-11.slatic.net/p/503c73cd636c9166960ba65b266eb4f9.jpg",
+                        "productUrl": "//www.lazada.sg/products/dynacore-dell-se2719hr-27-inch-fhd-ips-monitor75hz-screen-i310340185-s564978511.html?search=1",
+                        "sku": "310340185_SGAMZ",
+                        "skuId": "564978511"
+                    }
+                ],
+                "restrictedAge": 0,
+                "categories": [
+                    10100380,
+                    102
+                ],
+                "clickTrace": "query:se2719hr;nid:310340185;src:LazadaMainSrp;rn:e589212f974964ee99593abc1c55ab5a;region:sg;sku:310340185_SGAMZ;price:244.80;client:desktop;supplier_id:20957;asc_category_id:102;item_id:310340185;sku_id:564978511;shop_id:1347",
+                "addToCartSkus": [
+                    {
+                        "sku": "310340185_SGAMZ-564978511",
+                        "skuId": "564978511",
+                        "count": 0
+                    }
+                ],
+                "itemId": "310340185",
+                "voucherId": "9564214120957\u001d9754681620957\u001d9759629720957",
+                "skuId": "564978511",
+                "inStock": true,
+                "isAD": 0
+            },
+            {
+                "name": "(ALLSTARS : We are Back / MUST-Buy Promo) Dell 27 inch SE2719HR Full HD IPS Monitor / 75Hz / AMD Freesync / HDMI+VGA (DELL-SE2719HR) (Warranty 3years on-site by Dell SG)",
+                "nid": "597884180",
+                "icons": [
+                    {
+                        "url": "//laz-img-cdn.alicdn.com/tfs/TB1QTkMXG67gK0jSZFHXXa9jVXa-45-28.png",
+                        "domClass": "freeShipping",
+                        "alias": "freeShipping",
+                        "type": "img",
+                        "style": {
+                            "width": 45.0,
+                            "height": 28.0
+                        },
+                        "group": "2",
+                        "showType": "0",
+                        "order": 0,
+                        "font-size": 0
+                    }
+                ],
+                "utLogMap": {
+                    "x_object_type": "item",
+                    "hyperspace_bts": "tr_bt:3;jinnang_bid:5;doufukuai_bid:4;search_engine_bid:1;gs_jinnang_bid:5;gs_tcbid:2;golden_slots_for_redmart:true;new_rank:7;gs_title_completion:4;gs_shipping_origin:;rerank_size_improvement_bid:;rank_size_improvement_bid:1;degrade_by_user_level:;ul_hit:;sp_common_level_bid:0;sp_common_level_bid_l2:0;sp_common_level_bid_l3:7;rank_optimize:;lang_detect:1;business_bid:3;spell_correct_bid:1;lzd_search_rerank_bid:7;search_recall_bucket_id:4;sp_common_level_bid4:0;use_phrase_v2:0;sp_common_level_bid_l5:0",
+                    "x_item_ids": "597884180",
+                    "x_ad": "1",
+                    "x_object_id": "597884180"
+                },
+                "productUrl": "//www.lazada.sg/products/allstars-we-are-back-must-buy-promo-dell-27-inch-se2719hr-full-hd-ips-monitor-75hz-amd-freesync-hdmivga-dell-se2719hr-warranty-3years-on-site-by-dell-sg-i597884180-s1728620994.html?search=1",
+                "image": "https://sg-test-11.slatic.net/p/9eb84ebb31e8c0fb01a80554bd59c29d.jpg",
+                "originalPrice": "309.00",
+                "originalPriceShow": "$309.00",
+                "price": "268.00",
+                "promotionId": "null",
+                "priceShow": "$268.00",
+                "discount": "-13%",
+                "ratingScore": "5.0",
+                "review": "15",
+                "installment": "",
+                "tItemType": "nt_product",
+                "location": "Singapore",
+                "cheapest_sku": "597884180_SGAMZ-1728620994",
+                "sku": "597884180_SGAMZ",
+                "skus": [
+                    {
+                        "id": "597884180_SGAMZ-1728620994"
+                    }
+                ],
+                "description": [
+                    "Panel : IPS",
+                    "Resolution : Full HD 1920x1080",
+                    "Refresh Rate : 75Hz",
+                    "Brightness : 300 cd/m2",
+                    "Response Time : 4ms GTG",
+                    "Thin Bezel",
+                    "Screen Coating : Anti-Glare",
+                    "Adaptive-Sync : AMD Freesync",
+                    "Connectivity : HDMI / VGA",
+                    "Tilt : YES : -5/+21Deg",
+                    "Pivotable : NO",
+                    "Height Adjustable : NO",
+                    "VESA Mount compatible : NO",
+                    "Speaker : NO",
+                    "Headphone Out : NO",
+                    "HDMI Cable included in default Dell Standard Packaging"
+                ],
+                "brandId": "24597",
+                "brandName": "Dell",
+                "sellerId": "1000088927",
+                "mainSellerId": "1000088927",
+                "sellerName": "ALLSTARS",
+                "thumbs": [
+                    {
+                        "image": "https://sg-test-11.slatic.net/p/9eb84ebb31e8c0fb01a80554bd59c29d.jpg",
+                        "productUrl": "//www.lazada.sg/products/allstars-we-are-back-must-buy-promo-dell-27-inch-se2719hr-full-hd-ips-monitor-75hz-amd-freesync-hdmivga-dell-se2719hr-warranty-3years-on-site-by-dell-sg-i597884180-s1728620994.html?search=1",
+                        "sku": "597884180_SGAMZ",
+                        "skuId": "1728620994"
+                    }
+                ],
+                "restrictedAge": 0,
+                "categories": [
+                    10100380,
+                    102
+                ],
+                "clickTrace": "query:se2719hr;nid:597884180;src:LazadaMainSrp;rn:e589212f974964ee99593abc1c55ab5a;region:sg;sku:597884180_SGAMZ;price:268.00;client:desktop;supplier_id:1000088927;asc_category_id:102;item_id:597884180;sku_id:1728620994;shop_id:179577",
+                "addToCartSkus": [
+                    {
+                        "sku": "597884180_SGAMZ-1728620994",
+                        "skuId": "1728620994",
+                        "count": 0
+                    }
+                ],
+                "itemId": "597884180",
+                "voucherId": "8809001488927\u001d8810007188927",
+                "skuId": "1728620994",
+                "inStock": true,
+                "isAD": 0
+            },
+            {
+                "name": "[Ready Stock]Dell SE2719HR 27inch FHD IPS Monitor | Freesync 75hz | 5ms | Ready Stock,Ship out today",
+                "nid": "808576200",
+                "icons": [
+                    {
+                        "url": "//laz-img-cdn.alicdn.com/tfs/TB1QTkMXG67gK0jSZFHXXa9jVXa-45-28.png",
+                        "domClass": "freeShipping",
+                        "alias": "freeShipping",
+                        "type": "img",
+                        "style": {
+                            "width": 45.0,
+                            "height": 28.0
+                        },
+                        "group": "2",
+                        "showType": "0",
+                        "order": 0,
+                        "font-size": 0
+                    }
+                ],
+                "utLogMap": {
+                    "x_object_type": "item",
+                    "hyperspace_bts": "tr_bt:3;jinnang_bid:5;doufukuai_bid:4;search_engine_bid:1;gs_jinnang_bid:5;gs_tcbid:2;golden_slots_for_redmart:true;new_rank:7;gs_title_completion:4;gs_shipping_origin:;rerank_size_improvement_bid:;rank_size_improvement_bid:1;degrade_by_user_level:;ul_hit:;sp_common_level_bid:0;sp_common_level_bid_l2:0;sp_common_level_bid_l3:7;rank_optimize:;lang_detect:1;business_bid:3;spell_correct_bid:1;lzd_search_rerank_bid:7;search_recall_bucket_id:4;sp_common_level_bid4:0;use_phrase_v2:0;sp_common_level_bid_l5:0",
+                    "x_item_ids": "808576200",
+                    "x_ad": "1",
+                    "x_object_id": "808576200"
+                },
+                "productUrl": "//www.lazada.sg/products/ready-stockdell-se2719hr-27inch-fhd-ips-monitor-freesync-75hz-5ms-ready-stockship-out-today-i808576200-s2679472299.html?search=1",
+                "image": "https://sg-test-11.slatic.net/p/14a341b18ba1fe39c5afac4354d3025e.png",
+                "originalPrice": "299.00",
+                "originalPriceShow": "$299.00",
+                "price": "269.00",
+                "promotionId": "null",
+                "priceShow": "$269.00",
+                "discount": "-10%",
+                "ratingScore": "0",
+                "review": "",
+                "installment": "",
+                "tItemType": "nt_product",
+                "location": "Singapore",
+                "cheapest_sku": "808576200_SGAMZ-2679472299",
+                "sku": "808576200_SGAMZ",
+                "skus": [
+                    {
+                        "id": "808576200_SGAMZ-2679472299"
+                    }
+                ],
+                "description": [
+                    "This thin-bezel, 27&quot; monitor with a compact base maximizes screen space as well as desk space, so you can focus on your games, videos and files."
+                ],
+                "brandId": "24597",
+                "brandName": "Dell",
+                "sellerId": "100056871",
+                "mainSellerId": "100056871",
+                "sellerName": "ATRiX Aurora Computer",
+                "thumbs": [
+                    {
+                        "image": "https://sg-test-11.slatic.net/p/14a341b18ba1fe39c5afac4354d3025e.png",
+                        "productUrl": "//www.lazada.sg/products/ready-stockdell-se2719hr-27inch-fhd-ips-monitor-freesync-75hz-5ms-ready-stockship-out-today-i808576200-s2679472299.html?search=1",
+                        "sku": "808576200_SGAMZ",
+                        "skuId": "2679472299"
+                    }
+                ],
+                "restrictedAge": 0,
+                "categories": [
+                    10100380,
+                    102
+                ],
+                "clickTrace": "query:se2719hr;nid:808576200;src:LazadaMainSrp;rn:e589212f974964ee99593abc1c55ab5a;region:sg;sku:808576200_SGAMZ;price:269.00;client:desktop;supplier_id:100056871;asc_category_id:102;item_id:808576200;sku_id:2679472299;shop_id:4025",
+                "addToCartSkus": [
+                    {
+                        "sku": "808576200_SGAMZ-2679472299",
+                        "skuId": "2679472299",
+                        "count": 0
+                    }
+                ],
+                "itemId": "808576200",
+                "voucherId": "9541079356871\u001d9783017056871",
+                "skuId": "2679472299",
+                "inStock": true,
+                "isAD": 0
+            },
+            {
+                "name": "DELL SE2719HR 27Inch Full HD IPS LED MONITOR",
+                "nid": "458742152",
+                "icons": [
+                    {
+                        "url": "//laz-img-cdn.alicdn.com/tfs/TB1QTkMXG67gK0jSZFHXXa9jVXa-45-28.png",
+                        "domClass": "freeShipping",
+                        "alias": "freeShipping",
+                        "type": "img",
+                        "style": {
+                            "width": 45.0,
+                            "height": 28.0
+                        },
+                        "group": "2",
+                        "showType": "0",
+                        "order": 0,
+                        "font-size": 0
+                    }
+                ],
+                "utLogMap": {
+                    "x_object_type": "item",
+                    "hyperspace_bts": "tr_bt:3;jinnang_bid:5;doufukuai_bid:4;search_engine_bid:1;gs_jinnang_bid:5;gs_tcbid:2;golden_slots_for_redmart:true;new_rank:7;gs_title_completion:4;gs_shipping_origin:;rerank_size_improvement_bid:;rank_size_improvement_bid:1;degrade_by_user_level:;ul_hit:;sp_common_level_bid:0;sp_common_level_bid_l2:0;sp_common_level_bid_l3:7;rank_optimize:;lang_detect:1;business_bid:3;spell_correct_bid:1;lzd_search_rerank_bid:7;search_recall_bucket_id:4;sp_common_level_bid4:0;use_phrase_v2:0;sp_common_level_bid_l5:0",
+                    "x_item_ids": "458742152",
+                    "x_ad": "1",
+                    "x_object_id": "458742152"
+                },
+                "productUrl": "//www.lazada.sg/products/dell-se2719hr-27inch-full-hd-ips-led-monitor-i458742152-s1231024444.html?search=1",
+                "image": "https://sg-test-11.slatic.net/p/0128ad1be66c0f68f2efbcf50e976d6c.jpg",
+                "originalPrice": "309.00",
+                "originalPriceShow": "$309.00",
+                "price": "229.00",
+                "promotionId": "null",
+                "priceShow": "$229.00",
+                "discount": "-26%",
+                "ratingScore": "5.0",
+                "review": "3",
+                "installment": "",
+                "tItemType": "nt_product",
+                "location": "Singapore",
+                "cheapest_sku": "458742152_SGAMZ-1231024444",
+                "sku": "458742152_SGAMZ",
+                "skus": [
+                    {
+                        "id": "458742152_SGAMZ-1231024444"
+                    }
+                ],
+                "description": [
+                    "Screen Size: 27 Inch IPS LED Anti Glare Screen",
+                    "Native Resolution: 1920 x 1080 at 75Hz",
+                    "Brightness: 300 cd/m",
+                    "Contrast Ratio: 1000:1",
+                    "Input Connector: HDMI, VGA",
+                    "Elegant touches:The thin bezels offer a sleek, modern look that complements any space.",
+                    "Compact and solid:The stand is now 10% smaller, freeing up desk space without compromising sturdiness. A built-in power supply unit further reduces clutter.",
+                    "Choose your view:Easily tilt the monitor to get just the right viewing angle.",
+                    "Easy on the eyes:Increase viewing comfort by minimizing blue light with Dell’s Comfort View, and reduce distractions with a flicker-free, anti-glare screen.",
+                    "For tear-free visuals during gameplay, this AMD Radeon FreeSync™ compatible monitor features up to 75 Hz refresh."
+                ],
+                "brandId": "43270",
+                "brandName": "Dell Computers",
+                "sellerId": "20228",
+                "mainSellerId": "20228",
+                "sellerName": "iTechnology",
+                "thumbs": [
+                    {
+                        "image": "https://sg-test-11.slatic.net/p/0128ad1be66c0f68f2efbcf50e976d6c.jpg",
+                        "productUrl": "//www.lazada.sg/products/dell-se2719hr-27inch-full-hd-ips-led-monitor-i458742152-s1231024444.html?search=1",
+                        "sku": "458742152_SGAMZ",
+                        "skuId": "1231024444"
+                    }
+                ],
+                "restrictedAge": 0,
+                "categories": [
+                    10100380,
+                    102
+                ],
+                "clickTrace": "query:se2719hr;nid:458742152;src:LazadaMainSrp;rn:e589212f974964ee99593abc1c55ab5a;region:sg;sku:458742152_SGAMZ;price:229.00;client:desktop;supplier_id:20228;asc_category_id:102;item_id:458742152;sku_id:1231024444;shop_id:1234",
+                "addToCartSkus": [
+                    {
+                        "sku": "458742152_SGAMZ-1231024444",
+                        "skuId": "1231024444",
+                        "count": 0
+                    }
+                ],
+                "itemId": "458742152",
+                "voucherId": "",
+                "skuId": "1231024444",
+                "inStock": true,
+                "isAD": 0
+            },
+            {
+                "name": "Dell SE2719HR 27Inch Full HD IPS Monitor (HDMI, VGA, 3 Yrs Wrty)",
+                "nid": "532832108",
+                "icons": [],
+                "utLogMap": {
+                    "x_object_type": "item",
+                    "hyperspace_bts": "tr_bt:3;jinnang_bid:5;doufukuai_bid:4;search_engine_bid:1;gs_jinnang_bid:5;gs_tcbid:2;golden_slots_for_redmart:true;new_rank:7;gs_title_completion:4;gs_shipping_origin:;rerank_size_improvement_bid:;rank_size_improvement_bid:1;degrade_by_user_level:;ul_hit:;sp_common_level_bid:0;sp_common_level_bid_l2:0;sp_common_level_bid_l3:7;rank_optimize:;lang_detect:1;business_bid:3;spell_correct_bid:1;lzd_search_rerank_bid:7;search_recall_bucket_id:4;sp_common_level_bid4:0;use_phrase_v2:0;sp_common_level_bid_l5:0",
+                    "x_item_ids": "532832108",
+                    "x_ad": "1",
+                    "x_object_id": "532832108"
+                },
+                "productUrl": "//www.lazada.sg/products/dell-se2719hr-27inch-full-hd-ips-monitor-hdmi-vga-3-yrs-wrty-i532832108-s1498320914.html?search=1",
+                "image": "https://sg-test-11.slatic.net/p/6e99b2f072d23fb394ae09a757116136.jpg",
+                "price": "235.00",
+                "promotionId": "null",
+                "priceShow": "$235.00",
+                "ratingScore": "5.0",
+                "review": "1",
+                "installment": "",
+                "tItemType": "nt_product",
+                "location": "Singapore",
+                "cheapest_sku": "532832108_SGAMZ-1498320914",
+                "sku": "532832108_SGAMZ",
+                "skus": [
+                    {
+                        "id": "532832108_SGAMZ-1498320914"
+                    }
+                ],
+                "description": [
+                    "Game with tear-free visuals on this AMD, Radeon FreeSync compatible monitor that features up to 75Hz refresh rate",
+                    "The stand is now 10% smaller+, freeing up desk space without compromising sturdiness, a built-in power supply unit further reduces desk clutter",
+                    "Optimize eye comfort and minimize distractions thanks to a flicker-free, antiglare screen",
+                    "Stay organized between applications, emails and Windows on one screen using Dell easy Arrange",
+                    "Choose your view with easy tilt monitor to get just the ideal viewing angle"
+                ],
+                "brandId": "24597",
+                "brandName": "Dell",
+                "sellerId": "257",
+                "mainSellerId": "257",
+                "sellerName": "Video-Pro Pte Ltd",
+                "thumbs": [
+                    {
+                        "image": "https://sg-test-11.slatic.net/p/6e99b2f072d23fb394ae09a757116136.jpg",
+                        "productUrl": "//www.lazada.sg/products/dell-se2719hr-27inch-full-hd-ips-monitor-hdmi-vga-3-yrs-wrty-i532832108-s1498320914.html?search=1",
+                        "sku": "532832108_SGAMZ",
+                        "skuId": "1498320914"
+                    }
+                ],
+                "restrictedAge": 0,
+                "categories": [
+                    10100380,
+                    102
+                ],
+                "clickTrace": "query:se2719hr;nid:532832108;src:LazadaMainSrp;rn:e589212f974964ee99593abc1c55ab5a;region:sg;sku:532832108_SGAMZ;price:235.00;client:desktop;supplier_id:257;asc_category_id:102;item_id:532832108;sku_id:1498320914;shop_id:4360",
+                "addToCartSkus": [
+                    {
+                        "sku": "532832108_SGAMZ-1498320914",
+                        "skuId": "1498320914",
+                        "count": 0
+                    }
+                ],
+                "itemId": "532832108",
+                "voucherId": "",
+                "skuId": "1498320914",
+                "inStock": true,
+                "isAD": 0
+            },
+            {
+                "name": "【DELIVERY IN 24 HOURS】DELL SE2719HR 27 Inch FULL HD MONITOR",
+                "nid": "455106742",
+                "icons": [],
+                "utLogMap": {
+                    "x_object_type": "item",
+                    "hyperspace_bts": "tr_bt:3;jinnang_bid:5;doufukuai_bid:4;search_engine_bid:1;gs_jinnang_bid:5;gs_tcbid:2;golden_slots_for_redmart:true;new_rank:7;gs_title_completion:4;gs_shipping_origin:;rerank_size_improvement_bid:;rank_size_improvement_bid:1;degrade_by_user_level:;ul_hit:;sp_common_level_bid:0;sp_common_level_bid_l2:0;sp_common_level_bid_l3:7;rank_optimize:;lang_detect:1;business_bid:3;spell_correct_bid:1;lzd_search_rerank_bid:7;search_recall_bucket_id:4;sp_common_level_bid4:0;use_phrase_v2:0;sp_common_level_bid_l5:0",
+                    "x_item_ids": "455106742",
+                    "x_ad": "1",
+                    "x_object_id": "455106742"
+                },
+                "productUrl": "//www.lazada.sg/products/delivery-in-24-hoursdell-se2719hr-27-inch-full-hd-monitor-i455106742-s1219262656.html?search=1",
+                "image": "https://sg-test-11.slatic.net/p/a26f3035c5879c40ae317ab74e44ace2.jpg",
+                "originalPrice": "309.00",
+                "originalPriceShow": "$309.00",
+                "price": "279.00",
+                "promotionId": "null",
+                "priceShow": "$279.00",
+                "discount": "-10%",
+                "ratingScore": "5.0",
+                "review": "3",
+                "installment": "",
+                "tItemType": "nt_product",
+                "location": "Singapore",
+                "cheapest_sku": "455106742_SGAMZ-1219262656",
+                "sku": "455106742_SGAMZ",
+                "skus": [
+                    {
+                        "id": "455106742_SGAMZ-1219262656"
+                    }
+                ],
+                "description": [
+                    "Screen Size: 27 Inch",
+                    "Maximum Resolution: 1920 x 1080 at 75Hz",
+                    "Brightness: 350 cd/m",
+                    "Contrast Ratio: 1000:1",
+                    "Touch Screen: No",
+                    "Elegant touches:The thin bezels offer a sleek, modern look that complements any space.",
+                    "Compact and solid:The stand is now 10% smalleri, freeing up desk space without compromising sturdiness. A built-in power supply unit further reduces clutter.",
+                    "Choose your view:Easily tilt the monitor to get just the right viewing angle.",
+                    "Easy on the eyes:Increase viewing comfort by minimizing blue light with Dell&rsquo;s Comfort View, and reduce distractions with a flicker-free, anti-glare screen.",
+                    "For tear-free visuals during gameplay, this AMD Radeon FreeSync&trade; compatible monitor features up to 75 Hz refresh."
+                ],
+                "brandId": "43270",
+                "brandName": "Dell Computers",
+                "sellerId": "1000041981",
+                "mainSellerId": "1000041981",
+                "sellerName": "Dell Authorised Reseller Store",
+                "thumbs": [
+                    {
+                        "image": "https://sg-test-11.slatic.net/p/a26f3035c5879c40ae317ab74e44ace2.jpg",
+                        "productUrl": "//www.lazada.sg/products/delivery-in-24-hoursdell-se2719hr-27-inch-full-hd-monitor-i455106742-s1219262656.html?search=1",
+                        "sku": "455106742_SGAMZ",
+                        "skuId": "1219262656"
+                    }
+                ],
+                "restrictedAge": 0,
+                "categories": [
+                    10100380,
+                    102
+                ],
+                "clickTrace": "query:se2719hr;nid:455106742;src:LazadaMainSrp;rn:e589212f974964ee99593abc1c55ab5a;region:sg;sku:455106742_SGAMZ;price:279.00;client:desktop;supplier_id:1000041981;asc_category_id:102;item_id:455106742;sku_id:1219262656;shop_id:132756",
+                "addToCartSkus": [
+                    {
+                        "sku": "455106742_SGAMZ-1219262656",
+                        "skuId": "1219262656",
+                        "count": 0
+                    }
+                ],
+                "itemId": "455106742",
+                "voucherId": "",
+                "skuId": "1219262656",
+                "inStock": true,
+                "isAD": 0
+            },
+            {
+                "name": "【DELIVERY IN 24 HOURS】DYNACORE - DELL SE2719HR 27 Inch FULL HD MONITOR",
+                "nid": "451164425",
+                "icons": [
+                    {
+                        "url": "//laz-img-cdn.alicdn.com/tfs/TB1QTkMXG67gK0jSZFHXXa9jVXa-45-28.png",
+                        "domClass": "freeShipping",
+                        "alias": "freeShipping",
+                        "type": "img",
+                        "style": {
+                            "width": 45.0,
+                            "height": 28.0
+                        },
+                        "group": "2",
+                        "showType": "0",
+                        "order": 0,
+                        "font-size": 0
+                    }
+                ],
+                "utLogMap": {
+                    "x_object_type": "item",
+                    "hyperspace_bts": "tr_bt:3;jinnang_bid:5;doufukuai_bid:4;search_engine_bid:1;gs_jinnang_bid:5;gs_tcbid:2;golden_slots_for_redmart:true;new_rank:7;gs_title_completion:4;gs_shipping_origin:;rerank_size_improvement_bid:;rank_size_improvement_bid:1;degrade_by_user_level:;ul_hit:;sp_common_level_bid:0;sp_common_level_bid_l2:0;sp_common_level_bid_l3:7;rank_optimize:;lang_detect:1;business_bid:3;spell_correct_bid:1;lzd_search_rerank_bid:7;search_recall_bucket_id:4;sp_common_level_bid4:0;use_phrase_v2:0;sp_common_level_bid_l5:0",
+                    "x_item_ids": "451164425",
+                    "x_ad": "1",
+                    "x_object_id": "451164425"
+                },
+                "productUrl": "//www.lazada.sg/products/delivery-in-24-hoursdynacore-dell-se2719hr-27-inch-full-hd-monitor-i451164425-s1204674470.html?search=1",
+                "image": "https://sg-test-11.slatic.net/p/503c73cd636c9166960ba65b266eb4f9.jpg",
+                "originalPrice": "359.00",
+                "originalPriceShow": "$359.00",
+                "price": "259.00",
+                "promotionId": "null",
+                "priceShow": "$259.00",
+                "discount": "-28%",
+                "ratingScore": "5.0",
+                "review": "3",
+                "installment": "",
+                "tItemType": "nt_product",
+                "location": "Singapore",
+                "cheapest_sku": "451164425_SGAMZ-1204674470",
+                "sku": "451164425_SGAMZ",
+                "skus": [
+                    {
+                        "id": "451164425_SGAMZ-1204674470"
+                    }
+                ],
+                "description": [
+                    "Screen Size: 27 Inch",
+                    "Maximum Resolution: 1920 x 1080 at 60Hz",
+                    "Brightness: 350 cd/m",
+                    "Contrast Ratio: 1000:1",
+                    "Touch Screen: No",
+                    "Elegant touches:The thin bezels offer a sleek, modern look that complements any space.",
+                    "Compact and solid:The stand is now 10% smalleri, freeing up desk space without compromising sturdiness. A built-in power supply unit further reduces clutter.",
+                    "Choose your view:Easily tilt the monitor to get just the right viewing angle.",
+                    "Easy on the eyes:Increase viewing comfort by minimizing blue light with Dell’s Comfort View, and reduce distractions with a flicker-free, anti-glare screen.",
+                    "For tear-free visuals during gameplay, this AMD Radeon FreeSync™ compatible monitor features up to 75 Hz refresh."
+                ],
+                "brandId": "43270",
+                "brandName": "Dell Computers",
+                "sellerId": "20957",
+                "mainSellerId": "20957",
+                "sellerName": "DYNACORE",
+                "thumbs": [
+                    {
+                        "image": "https://sg-test-11.slatic.net/p/503c73cd636c9166960ba65b266eb4f9.jpg",
+                        "productUrl": "//www.lazada.sg/products/delivery-in-24-hoursdynacore-dell-se2719hr-27-inch-full-hd-monitor-i451164425-s1204674470.html?search=1",
+                        "sku": "451164425_SGAMZ",
+                        "skuId": "1204674470"
+                    }
+                ],
+                "restrictedAge": 0,
+                "categories": [
+                    10100380,
+                    102
+                ],
+                "clickTrace": "query:se2719hr;nid:451164425;src:LazadaMainSrp;rn:e589212f974964ee99593abc1c55ab5a;region:sg;sku:451164425_SGAMZ;price:259.00;client:desktop;supplier_id:20957;asc_category_id:102;item_id:451164425;sku_id:1204674470;shop_id:1347",
+                "addToCartSkus": [
+                    {
+                        "sku": "451164425_SGAMZ-1204674470",
+                        "skuId": "1204674470",
+                        "count": 0
+                    }
+                ],
+                "itemId": "451164425",
+                "voucherId": "9564214120957\u001d9754681620957\u001d9759629720957",
+                "skuId": "1204674470",
+                "inStock": true,
+                "isAD": 0
+            },
+            {
+                "name": "Dell 27 Monitor: SE2719HR",
+                "nid": "557420993",
+                "icons": [],
+                "utLogMap": {
+                    "x_object_type": "item",
+                    "hyperspace_bts": "tr_bt:3;jinnang_bid:5;doufukuai_bid:4;search_engine_bid:1;gs_jinnang_bid:5;gs_tcbid:2;golden_slots_for_redmart:true;new_rank:7;gs_title_completion:4;gs_shipping_origin:;rerank_size_improvement_bid:;rank_size_improvement_bid:1;degrade_by_user_level:;ul_hit:;sp_common_level_bid:0;sp_common_level_bid_l2:0;sp_common_level_bid_l3:7;rank_optimize:;lang_detect:1;business_bid:3;spell_correct_bid:1;lzd_search_rerank_bid:7;search_recall_bucket_id:4;sp_common_level_bid4:0;use_phrase_v2:0;sp_common_level_bid_l5:0",
+                    "x_item_ids": "557420993",
+                    "x_ad": "1",
+                    "x_object_id": "557420993"
+                },
+                "productUrl": "//www.lazada.sg/products/dell-27-monitor-se2719hr-i557420993-s1583096183.html?search=1",
+                "image": "https://sg-test-11.slatic.net/p/8a9cfc2d26773053d423f982da23e787.jpg",
+                "price": "299.00",
+                "promotionId": "null",
+                "priceShow": "$299.00",
+                "ratingScore": "0",
+                "review": "",
+                "installment": "",
+                "tItemType": "nt_product",
+                "location": "Singapore",
+                "cheapest_sku": "557420993_SGAMZ-1583096183",
+                "sku": "557420993_SGAMZ",
+                "skus": [
+                    {
+                        "id": "557420993_SGAMZ-1583096183"
+                    }
+                ],
+                "description": [
+                    "View games, video and files clearly on this 27\" Full HD monitor with thin bezels and a compact footprint that frees up valuable desk space"
+                ],
+                "brandId": "24597",
+                "brandName": "Dell",
+                "sellerId": "100002198",
+                "mainSellerId": "100002198",
+                "sellerName": "NET Pro",
+                "thumbs": [
+                    {
+                        "image": "https://sg-test-11.slatic.net/p/8a9cfc2d26773053d423f982da23e787.jpg",
+                        "productUrl": "//www.lazada.sg/products/dell-27-monitor-se2719hr-i557420993-s1583096183.html?search=1",
+                        "sku": "557420993_SGAMZ",
+                        "skuId": "1583096183"
+                    }
+                ],
+                "restrictedAge": 0,
+                "categories": [
+                    10100380,
+                    102
+                ],
+                "clickTrace": "query:se2719hr;nid:557420993;src:LazadaMainSrp;rn:e589212f974964ee99593abc1c55ab5a;region:sg;sku:557420993_SGAMZ;price:299.00;client:desktop;supplier_id:100002198;asc_category_id:102;item_id:557420993;sku_id:1583096183;shop_id:2256",
+                "addToCartSkus": [
+                    {
+                        "sku": "557420993_SGAMZ-1583096183",
+                        "skuId": "1583096183",
+                        "count": 0
+                    }
+                ],
+                "itemId": "557420993",
+                "voucherId": "",
+                "skuId": "1583096183",
+                "inStock": true,
+                "isAD": 0
+            },
+            {
+                "name": "DELL SE2719HR 27 IN FULL HD MONITOR FREE SYNC WITH HDMI CABLE WITH FREE MICRO USB OTG READER HWILE STOCKS LAST (SE2719HR)",
+                "nid": "450658265",
+                "icons": [],
+                "utLogMap": {
+                    "x_object_type": "item",
+                    "hyperspace_bts": "tr_bt:3;jinnang_bid:5;doufukuai_bid:4;search_engine_bid:1;gs_jinnang_bid:5;gs_tcbid:2;golden_slots_for_redmart:true;new_rank:7;gs_title_completion:4;gs_shipping_origin:;rerank_size_improvement_bid:;rank_size_improvement_bid:1;degrade_by_user_level:;ul_hit:;sp_common_level_bid:0;sp_common_level_bid_l2:0;sp_common_level_bid_l3:7;rank_optimize:;lang_detect:1;business_bid:3;spell_correct_bid:1;lzd_search_rerank_bid:7;search_recall_bucket_id:4;sp_common_level_bid4:0;use_phrase_v2:0;sp_common_level_bid_l5:0",
+                    "x_item_ids": "450658265",
+                    "x_ad": "1",
+                    "x_object_id": "450658265"
+                },
+                "productUrl": "//www.lazada.sg/products/dell-se2719hr-27-in-full-hd-monitor-free-sync-with-hdmi-cable-with-free-micro-usb-otg-reader-hwile-stocks-last-se2719hr-i450658265-s1202202382.html?search=1",
+                "image": "https://sg-test-11.slatic.net/p/1cf74a2ec3e61c5d53bffb702c6d1400.jpg",
+                "price": "259.00",
+                "promotionId": "null",
+                "priceShow": "$259.00",
+                "ratingScore": "0",
+                "review": "",
+                "installment": "",
+                "tItemType": "nt_product",
+                "location": "Singapore",
+                "cheapest_sku": "450658265_SGAMZ-1202202382",
+                "sku": "450658265_SGAMZ",
+                "skus": [
+                    {
+                        "id": "450658265_SGAMZ-1202202382"
+                    }
+                ],
+                "description": [
+                    "Screen Size: 27 Inch",
+                    "Maximum Resolution: 1920 x 1080 at 60Hz",
+                    "Brightness: 350 cd/m",
+                    "Contrast Ratio: 1000:1",
+                    "Touch Screen: No"
+                ],
+                "brandId": "43270",
+                "brandName": "Dell Computers",
+                "sellerId": "362",
+                "mainSellerId": "362",
+                "sellerName": "FEPL",
+                "thumbs": [
+                    {
+                        "image": "https://sg-test-11.slatic.net/p/1cf74a2ec3e61c5d53bffb702c6d1400.jpg",
+                        "productUrl": "//www.lazada.sg/products/dell-se2719hr-27-in-full-hd-monitor-free-sync-with-hdmi-cable-with-free-micro-usb-otg-reader-hwile-stocks-last-se2719hr-i450658265-s1202202382.html?search=1",
+                        "sku": "450658265_SGAMZ",
+                        "skuId": "1202202382"
+                    }
+                ],
+                "restrictedAge": 0,
+                "categories": [
+                    10100380,
+                    102
+                ],
+                "clickTrace": "query:se2719hr;nid:450658265;src:LazadaMainSrp;rn:e589212f974964ee99593abc1c55ab5a;region:sg;sku:450658265_SGAMZ;price:259.00;client:desktop;supplier_id:362;asc_category_id:102;item_id:450658265;sku_id:1202202382;shop_id:2974",
+                "addToCartSkus": [
+                    {
+                        "sku": "450658265_SGAMZ-1202202382",
+                        "skuId": "1202202382",
+                        "count": 0
+                    }
+                ],
+                "itemId": "450658265",
+                "voucherId": "9770805100362",
+                "skuId": "1202202382",
+                "inStock": true,
+                "isAD": 0
+            },
+            {
+                "name": "Dell 27 Monitor IPS LED Edgelight 2019 Gaming Monitor: SE2719HR",
+                "nid": "672650725",
+                "icons": [],
+                "utLogMap": {
+                    "x_object_type": "item",
+                    "hyperspace_bts": "tr_bt:3;jinnang_bid:5;doufukuai_bid:4;search_engine_bid:1;gs_jinnang_bid:5;gs_tcbid:2;golden_slots_for_redmart:true;new_rank:7;gs_title_completion:4;gs_shipping_origin:;rerank_size_improvement_bid:;rank_size_improvement_bid:1;degrade_by_user_level:;ul_hit:;sp_common_level_bid:0;sp_common_level_bid_l2:0;sp_common_level_bid_l3:7;rank_optimize:;lang_detect:1;business_bid:3;spell_correct_bid:1;lzd_search_rerank_bid:7;search_recall_bucket_id:4;sp_common_level_bid4:0;use_phrase_v2:0;sp_common_level_bid_l5:0",
+                    "x_item_ids": "672650725",
+                    "x_ad": "1",
+                    "x_object_id": "672650725"
+                },
+                "productUrl": "//www.lazada.sg/products/dell-27-monitor-ips-led-edgelight-2019-gaming-monitor-se2719hr-i672650725-s2052934216.html?search=1",
+                "image": "https://sg-test-11.slatic.net/p/43d357608a21936ee829271915bb416f.png",
+                "price": "259.00",
+                "promotionId": "null",
+                "priceShow": "$259.00",
+                "ratingScore": "5.0",
+                "review": "4",
+                "installment": "",
+                "tItemType": "nt_product",
+                "location": "Singapore",
+                "cheapest_sku": "672650725_SGAMZ-2052934216",
+                "sku": "672650725_SGAMZ",
+                "skus": [
+                    {
+                        "id": "672650725_SGAMZ-2052934216"
+                    }
+                ],
+                "description": [
+                    "View games, video and files clearly on this 27&quot; Full HD monitor with thin bezels and a compact footprint that frees up valuable desk space.27-Inch IPS LED Edgelight 2019 Gaming Monitor - (Black) 4 ms Response Time, FHD (1920 x 1080) AT 60 Hz, AMD Radeon FreeSync, Tilt, Comfort View, HDMI, VGA"
+                ],
+                "brandId": "24597",
+                "brandName": "Dell",
+                "sellerId": "1000135979",
+                "mainSellerId": "1000135979",
+                "sellerName": "ITgeek",
+                "thumbs": [
+                    {
+                        "image": "https://sg-test-11.slatic.net/p/43d357608a21936ee829271915bb416f.png",
+                        "productUrl": "//www.lazada.sg/products/dell-27-monitor-ips-led-edgelight-2019-gaming-monitor-se2719hr-i672650725-s2052934216.html?search=1",
+                        "sku": "672650725_SGAMZ",
+                        "skuId": "2052934216"
+                    }
+                ],
+                "restrictedAge": 0,
+                "categories": [
+                    10100380,
+                    102
+                ],
+                "clickTrace": "query:se2719hr;nid:672650725;src:LazadaMainSrp;rn:e589212f974964ee99593abc1c55ab5a;region:sg;sku:672650725_SGAMZ;price:259.00;client:desktop;supplier_id:1000135979;asc_category_id:102;item_id:672650725;sku_id:2052934216;shop_id:226444",
+                "addToCartSkus": [
+                    {
+                        "sku": "672650725_SGAMZ-2052934216",
+                        "skuId": "2052934216",
+                        "count": 0
+                    }
+                ],
+                "itemId": "672650725",
+                "voucherId": "9736219935979",
+                "skuId": "2052934216",
+                "inStock": false,
+                "isAD": 0
+            },
+            {
+                "name": "Dell 27' Monitor SE2719HR",
+                "nid": "486630762",
+                "icons": [
+                    {
+                        "url": "//laz-img-cdn.alicdn.com/tfs/TB1QTkMXG67gK0jSZFHXXa9jVXa-45-28.png",
+                        "domClass": "freeShipping",
+                        "alias": "freeShipping",
+                        "type": "img",
+                        "style": {
+                            "width": 45.0,
+                            "height": 28.0
+                        },
+                        "group": "2",
+                        "showType": "0",
+                        "order": 0,
+                        "font-size": 0
+                    }
+                ],
+                "utLogMap": {
+                    "x_object_type": "item",
+                    "hyperspace_bts": "tr_bt:3;jinnang_bid:5;doufukuai_bid:4;search_engine_bid:1;gs_jinnang_bid:5;gs_tcbid:2;golden_slots_for_redmart:true;new_rank:7;gs_title_completion:4;gs_shipping_origin:;rerank_size_improvement_bid:;rank_size_improvement_bid:1;degrade_by_user_level:;ul_hit:;sp_common_level_bid:0;sp_common_level_bid_l2:0;sp_common_level_bid_l3:7;rank_optimize:;lang_detect:1;business_bid:3;spell_correct_bid:1;lzd_search_rerank_bid:7;search_recall_bucket_id:4;sp_common_level_bid4:0;use_phrase_v2:0;sp_common_level_bid_l5:0",
+                    "x_item_ids": "486630762",
+                    "x_ad": "1",
+                    "x_object_id": "486630762"
+                },
+                "productUrl": "//www.lazada.sg/products/dell-27-monitor-se2719hr-i486630762-s1330876042.html?search=1",
+                "image": "https://sg-test-11.slatic.net/p/bac68347e832194ed372a83086192c64.jpg",
+                "price": "249.00",
+                "promotionId": "null",
+                "priceShow": "$249.00",
+                "ratingScore": "5.0",
+                "review": "1",
+                "installment": "",
+                "tItemType": "nt_product",
+                "location": "Singapore",
+                "cheapest_sku": "486630762_SGAMZ-1330876042",
+                "sku": "486630762_SGAMZ",
+                "skus": [
+                    {
+                        "id": "486630762_SGAMZ-1330876042"
+                    }
+                ],
+                "description": [
+                    "View games, video and files clearly on this 27\" Full HD monitor with thin bezels and a compact footprint that frees up valuable desk space."
+                ],
+                "brandId": "24597",
+                "brandName": "Dell",
+                "sellerId": "63",
+                "mainSellerId": "63",
+                "sellerName": "BIZGRAM ASIA PTE LTD",
+                "thumbs": [
+                    {
+                        "image": "https://sg-test-11.slatic.net/p/bac68347e832194ed372a83086192c64.jpg",
+                        "productUrl": "//www.lazada.sg/products/dell-27-monitor-se2719hr-i486630762-s1330876042.html?search=1",
+                        "sku": "486630762_SGAMZ",
+                        "skuId": "1330876042"
+                    }
+                ],
+                "restrictedAge": 0,
+                "categories": [
+                    10100380,
+                    102
+                ],
+                "clickTrace": "query:se2719hr;nid:486630762;src:LazadaMainSrp;rn:e589212f974964ee99593abc1c55ab5a;region:sg;sku:486630762_SGAMZ;price:249.00;client:desktop;supplier_id:63;asc_category_id:102;item_id:486630762;sku_id:1330876042;shop_id:2225",
+                "addToCartSkus": [
+                    {
+                        "sku": "486630762_SGAMZ-1330876042",
+                        "skuId": "1330876042",
+                        "count": 0
+                    }
+                ],
+                "itemId": "486630762",
+                "voucherId": "",
+                "skuId": "1330876042",
+                "inStock": false,
+                "isAD": 0
+            },
+            {
+                "name": "Dell 27 Full HD Monitor Freesync 75hz SE2719HR ( Brought to you by Cybermind )",
+                "nid": "619402721",
+                "icons": [],
+                "utLogMap": {
+                    "x_object_type": "item",
+                    "hyperspace_bts": "tr_bt:3;jinnang_bid:5;doufukuai_bid:4;search_engine_bid:1;gs_jinnang_bid:5;gs_tcbid:2;golden_slots_for_redmart:true;new_rank:7;gs_title_completion:4;gs_shipping_origin:;rerank_size_improvement_bid:;rank_size_improvement_bid:1;degrade_by_user_level:;ul_hit:;sp_common_level_bid:0;sp_common_level_bid_l2:0;sp_common_level_bid_l3:7;rank_optimize:;lang_detect:1;business_bid:3;spell_correct_bid:1;lzd_search_rerank_bid:7;search_recall_bucket_id:4;sp_common_level_bid4:0;use_phrase_v2:0;sp_common_level_bid_l5:0",
+                    "x_item_ids": "619402721",
+                    "x_ad": "1",
+                    "x_object_id": "619402721"
+                },
+                "productUrl": "//www.lazada.sg/products/dell-27-full-hd-monitor-freesync-75hz-se2719hr-brought-to-you-by-cybermind-i619402721-s1835436235.html?search=1",
+                "image": "https://sg-test-11.slatic.net/p/4301ba6419bf1aa65889acea82d9e54f.jpg",
+                "price": "259.00",
+                "promotionId": "null",
+                "priceShow": "$259.00",
+                "ratingScore": "0",
+                "review": "",
+                "installment": "",
+                "tItemType": "nt_product",
+                "location": "Singapore",
+                "cheapest_sku": "619402721_SGAMZ-1835436235",
+                "sku": "619402721_SGAMZ",
+                "skus": [
+                    {
+                        "id": "619402721_SGAMZ-1835436235"
+                    }
+                ],
+                "description": [
+                    "View games, video and files clearly on this 27&quot; Full HD monitor with thin bezels and a compact footprint that frees up valuable desk space."
+                ],
+                "brandId": "43270",
+                "brandName": "Dell Computers",
+                "sellerId": "414",
+                "mainSellerId": "414",
+                "sellerName": "Cybermind",
+                "thumbs": [
+                    {
+                        "image": "https://sg-test-11.slatic.net/p/4301ba6419bf1aa65889acea82d9e54f.jpg",
+                        "productUrl": "//www.lazada.sg/products/dell-27-full-hd-monitor-freesync-75hz-se2719hr-brought-to-you-by-cybermind-i619402721-s1835436235.html?search=1",
+                        "sku": "619402721_SGAMZ",
+                        "skuId": "1835436235"
+                    }
+                ],
+                "restrictedAge": 0,
+                "categories": [
+                    10100380,
+                    102
+                ],
+                "clickTrace": "query:se2719hr;nid:619402721;src:LazadaMainSrp;rn:e589212f974964ee99593abc1c55ab5a;region:sg;sku:619402721_SGAMZ;price:259.00;client:desktop;supplier_id:414;asc_category_id:102;item_id:619402721;sku_id:1835436235;shop_id:1224",
+                "addToCartSkus": [
+                    {
+                        "sku": "619402721_SGAMZ-1835436235",
+                        "skuId": "1835436235",
+                        "count": 0
+                    }
+                ],
+                "itemId": "619402721",
+                "voucherId": "",
+                "skuId": "1835436235",
+                "inStock": false,
+                "isAD": 0
+            },
+            {
+                "name": "Dell 27 Monitor: SE2719HR",
+                "nid": "557458199",
+                "icons": [
+                    {
+                        "url": "//laz-img-cdn.alicdn.com/tfs/TB1QTkMXG67gK0jSZFHXXa9jVXa-45-28.png",
+                        "domClass": "freeShipping",
+                        "alias": "freeShipping",
+                        "type": "img",
+                        "style": {
+                            "width": 45.0,
+                            "height": 28.0
+                        },
+                        "group": "2",
+                        "showType": "0",
+                        "order": 0,
+                        "font-size": 0
+                    }
+                ],
+                "utLogMap": {
+                    "x_object_type": "item",
+                    "hyperspace_bts": "tr_bt:3;jinnang_bid:5;doufukuai_bid:4;search_engine_bid:1;gs_jinnang_bid:5;gs_tcbid:2;golden_slots_for_redmart:true;new_rank:7;gs_title_completion:4;gs_shipping_origin:;rerank_size_improvement_bid:;rank_size_improvement_bid:1;degrade_by_user_level:;ul_hit:;sp_common_level_bid:0;sp_common_level_bid_l2:0;sp_common_level_bid_l3:7;rank_optimize:;lang_detect:1;business_bid:3;spell_correct_bid:1;lzd_search_rerank_bid:7;search_recall_bucket_id:4;sp_common_level_bid4:0;use_phrase_v2:0;sp_common_level_bid_l5:0",
+                    "x_item_ids": "557458199",
+                    "x_ad": "1",
+                    "x_object_id": "557458199"
+                },
+                "productUrl": "//www.lazada.sg/products/dell-27-monitor-se2719hr-i557458199-s1583074914.html?search=1",
+                "image": "https://sg-test-11.slatic.net/p/8a9cfc2d26773053d423f982da23e787.jpg",
+                "price": "289.00",
+                "promotionId": "null",
+                "priceShow": "$289.00",
+                "ratingScore": "5.0",
+                "review": "1",
+                "installment": "",
+                "tItemType": "nt_product",
+                "location": "Singapore",
+                "cheapest_sku": "557458199_SGAMZ-1583074914",
+                "sku": "557458199_SGAMZ",
+                "skus": [
+                    {
+                        "id": "557458199_SGAMZ-1583074914"
+                    }
+                ],
+                "description": [
+                    "View games, video and files clearly on this 27\" Full HD monitor with thin bezels and a compact footprint that frees up valuable desk space."
+                ],
+                "brandId": "24597",
+                "brandName": "Dell",
+                "sellerId": "6343",
+                "mainSellerId": "6343",
+                "sellerName": "ITMALLSG",
+                "thumbs": [
+                    {
+                        "image": "https://sg-test-11.slatic.net/p/8a9cfc2d26773053d423f982da23e787.jpg",
+                        "productUrl": "//www.lazada.sg/products/dell-27-monitor-se2719hr-i557458199-s1583074914.html?search=1",
+                        "sku": "557458199_SGAMZ",
+                        "skuId": "1583074914"
+                    }
+                ],
+                "restrictedAge": 0,
+                "categories": [
+                    10100380,
+                    102
+                ],
+                "clickTrace": "query:se2719hr;nid:557458199;src:LazadaMainSrp;rn:e589212f974964ee99593abc1c55ab5a;region:sg;sku:557458199_SGAMZ;price:289.00;client:desktop;supplier_id:6343;asc_category_id:102;item_id:557458199;sku_id:1583074914;shop_id:2382",
+                "addToCartSkus": [
+                    {
+                        "sku": "557458199_SGAMZ-1583074914",
+                        "skuId": "1583074914",
+                        "count": 0
+                    }
+                ],
+                "itemId": "557458199",
+                "voucherId": "",
+                "skuId": "1583074914",
+                "inStock": false,
+                "isAD": 0
+            },
+            {
+                "name": "Dell SE2719HR 27  FHD IPS 16:9 monitor, 300cd/m2, 1,000:1, 5ms (fast), HDMI, VGA, Tilt",
+                "nid": "296738695",
+                "icons": [
+                    {
+                        "url": "//laz-img-cdn.alicdn.com/tfs/TB1QTkMXG67gK0jSZFHXXa9jVXa-45-28.png",
+                        "domClass": "freeShipping",
+                        "alias": "freeShipping",
+                        "type": "img",
+                        "style": {
+                            "width": 45.0,
+                            "height": 28.0
+                        },
+                        "group": "2",
+                        "showType": "0",
+                        "order": 0,
+                        "font-size": 0
+                    }
+                ],
+                "utLogMap": {
+                    "x_object_type": "item",
+                    "hyperspace_bts": "tr_bt:3;jinnang_bid:5;doufukuai_bid:4;search_engine_bid:1;gs_jinnang_bid:5;gs_tcbid:2;golden_slots_for_redmart:true;new_rank:7;gs_title_completion:4;gs_shipping_origin:;rerank_size_improvement_bid:;rank_size_improvement_bid:1;degrade_by_user_level:;ul_hit:;sp_common_level_bid:0;sp_common_level_bid_l2:0;sp_common_level_bid_l3:7;rank_optimize:;lang_detect:1;business_bid:3;spell_correct_bid:1;lzd_search_rerank_bid:7;search_recall_bucket_id:4;sp_common_level_bid4:0;use_phrase_v2:0;sp_common_level_bid_l5:0",
+                    "x_item_ids": "296738695",
+                    "x_ad": "1",
+                    "x_object_id": "296738695"
+                },
+                "productUrl": "//www.lazada.sg/products/dell-se2719hr-27-fhd-ips-169-monitor-300cdm2-10001-5ms-fast-hdmi-vga-tilt-i296738695-s502880732.html?search=1",
+                "image": "https://sg-test-11.slatic.net/p/771ed5ea940514092e5cf84e338735e7.jpg",
+                "price": "275.00",
+                "promotionId": "null",
+                "priceShow": "$275.00",
+                "ratingScore": "5.0",
+                "review": "6",
+                "installment": "",
+                "tItemType": "nt_product",
+                "location": "Singapore",
+                "cheapest_sku": "296738695_SGAMZ-502880732",
+                "sku": "296738695_SGAMZ",
+                "skus": [
+                    {
+                        "id": "296738695_SGAMZ-502880732"
+                    }
+                ],
+                "description": [
+                    "Native ResolutionFull HD (1080p) 1920 x 1080 at 60 Hz",
+                    "Aspect Ratio16:9",
+                    "Brightness300 cd/m²",
+                    "Viewable Size27\"",
+                    "Panel TypeIPS",
+                    "Dimensions (WxDxH) 61.15 cm x 18.68 cm x 45.42 cm - with stand"
+                ],
+                "brandId": "24597",
+                "brandName": "Dell",
+                "sellerId": "100031830",
+                "mainSellerId": "100031830",
+                "sellerName": "vii PC",
+                "thumbs": [
+                    {
+                        "image": "https://sg-test-11.slatic.net/p/771ed5ea940514092e5cf84e338735e7.jpg",
+                        "productUrl": "//www.lazada.sg/products/dell-se2719hr-27-fhd-ips-169-monitor-300cdm2-10001-5ms-fast-hdmi-vga-tilt-i296738695-s502880732.html?search=1",
+                        "sku": "296738695_SGAMZ",
+                        "skuId": "502880732"
+                    }
+                ],
+                "restrictedAge": 0,
+                "categories": [
+                    10100380,
+                    102
+                ],
+                "clickTrace": "query:se2719hr;nid:296738695;src:LazadaMainSrp;rn:e589212f974964ee99593abc1c55ab5a;region:sg;sku:296738695_SGAMZ;price:275.00;client:desktop;supplier_id:100031830;asc_category_id:102;item_id:296738695;sku_id:502880732;shop_id:52733",
+                "addToCartSkus": [
+                    {
+                        "sku": "296738695_SGAMZ-502880732",
+                        "skuId": "502880732",
+                        "count": 0
+                    }
+                ],
+                "itemId": "296738695",
+                "voucherId": "",
+                "skuId": "502880732",
+                "inStock": false,
+                "isAD": 0
+            }
+        ],
+        "breadcrumb": [
+            {
+                "url": "https://www.lazada.sg",
+                "title": "Home"
+            },
+            {
+                "title": "Search Results"
+            }
+        ],
+        "sortBar": {
+            "tItemType": "nt_sortbar",
+            "filter": "Filter",
+            "style": "wf",
+            "sortItems": [
+                {
+                    "name": "Popularity",
+                    "tip": "Popularity",
+                    "isActive": "true",
+                    "value": "popularity",
+                    "key": "sort",
+                    "tabName": ""
+                },
+                {
+                    "name": "Price-ASC",
+                    "tip": "Price low to high",
+                    "value": "priceasc",
+                    "key": "sort",
+                    "tabName": ""
+                },
+                {
+                    "name": "Price-DESC",
+                    "tip": "Price high to low",
+                    "value": "pricedesc",
+                    "key": "sort",
+                    "tabName": ""
+                }
+            ],
+            "hiddenLayoutBtn": false,
+            "module": {
+                "widgets": {},
+                "style": {
+                    "sale": {
+                        "type": "text",
+                        "color": "0x666666",
+                        "selectColor": "0x1B5EE2",
+                        "fontSize": "15",
+                        "marginLeft": "5",
+                        "direction": "left"
+                    },
+                    "guarantee": {
+                        "type": "img",
+                        "width": "34",
+                        "height": "24",
+                        "marginRight": "5",
+                        "marginBottom": "5",
+                        "direction": "right"
+                    },
+                    "freeshipping": {
+                        "type": "img",
+                        "width": "34",
+                        "height": "24",
+                        "marginRight": "5",
+                        "marginBottom": "5",
+                        "direction": "right"
+                    }
+                }
+            }
+        },
+        "bestShown": {
+            "title": "Seller Picks",
+            "url": "//www.lazada.sg/catalog/?referer_rn=e589212f974964ee99593abc1c55ab5a&q=se2719hr&m=best_shown&ajax=true&n=12&best_shown=1"
+        },
+        "resultTips": {
+            "tItemType": "nt_resulttips",
+            "tips": "18 items found for \"{$0}\"",
+            "brandLink": "",
+            "keywords": [
+                {
+                    "text": "se2719hr"
+                }
+            ]
+        }
+    },
+    "mainInfo": {
+        "errorMsg": "",
+        "bizCode": 0,
+        "isShowFloatCart": false,
+        "isHideAddToCart": false,
+        "totalResults": "18",
+        "pageSize": "40",
+        "page": "1",
+        "RN": "e589212f974964ee99593abc1c55ab5a",
+        "style": "wf",
+        "layoutInfo": {
+            "listHeader": [
+                "highlight",
+                "shopBanner",
+                "campaignBanner",
+                "categoryBar",
+                "brandBar",
+                "resultTips",
+                "didYouMean",
+                "promotionfilter",
+                "promotionRegion",
+                "promotionInfo",
+                "superStore",
+                "navCategory",
+                "banner",
+                "hotDeal"
+            ],
+            "stickyHeader": [
+                "sortBar"
+            ],
+            "sceneHeader": [
+                "sceneHeader"
+            ]
+        },
+        "pageType": "searchList",
+        "gridTitleLine": "2",
+        "trackParams": {},
+        "anonUid": "6c353c71-669e-47b6-aa57-b9652c6d9948",
+        "pageTitle": "se2719hr - Buy se2719hr at Best Price in Singapore | www.lazada.sg",
+        "lang": "en",
+        "venture": "SG",
+        "currency": "$",
+        "currencyOnRight": "false",
+        "currencySpace": "false",
+        "isShowFeedbackForm": "false",
+        "showThumbs": "false",
+        "addToCartURL": "//cart.lazada.sg/cart/api/add",
+        "themes": [
+            {
+                "key": "freeShipping",
+                "isImgIcon": "1",
+                "url": "//laz-img-cdn.alicdn.com/tfs/TB1QTkMXG67gK0jSZFHXXa9jVXa-45-28.png",
+                "locaLang": "",
+                "enLang": "",
+                "style": {
+                    "width": 45.0,
+                    "height": 28.0
+                },
+                "text": ""
+            },
+            {
+                "key": "lazMall",
+                "isImgIcon": "1",
+                "url": "//laz-img-cdn.alicdn.com/tfs/TB1HbRhawFY.1VjSZFnXXcFHXXa-86-28.png",
+                "locaLang": "",
+                "enLang": "",
+                "style": {
+                    "width": 86.0,
+                    "height": 28.0
+                },
+                "text": ""
+            },
+            {
+                "key": "redmart",
+                "isImgIcon": "1",
+                "url": "//img.alicdn.com/tfs/TB1J78ChAY2gK0jSZFgXXc5OFXa-84-28.png",
+                "locaLang": "",
+                "enLang": "",
+                "style": {
+                    "width": 84.0,
+                    "height": 28.0
+                },
+                "text": ""
+            },
+            {
+                "key": "2a67Nv",
+                "isImgIcon": "1",
+                "url": "//laz-img-cdn.alicdn.com/tfs/TB1_LzHeAY2gK0jSZFgXXc5OFXa-42-28.png",
+                "locaLang": "",
+                "enLang": "",
+                "style": {
+                    "width": 42.0,
+                    "height": 28.0
+                },
+                "text": ""
+            },
+            {
+                "key": "eMbyIj",
+                "isImgIcon": "1",
+                "url": "//laz-img-cdn.alicdn.com/tfs/TB1UZp2jYj1gK0jSZFuXXcrHpXa-54-28.png",
+                "locaLang": "",
+                "enLang": "",
+                "style": {
+                    "width": 54.0,
+                    "height": 28.0
+                },
+                "text": ""
+            },
+            {
+                "key": "aY7vM3",
+                "isImgIcon": "1",
+                "url": "//laz-img-cdn.alicdn.com/tfs/TB1SY7noEH1gK0jSZSyXXXtlpXa-56-28.png",
+                "locaLang": "",
+                "enLang": "",
+                "style": {
+                    "width": 56.0,
+                    "height": 28.0
+                },
+                "text": ""
+            },
+            {
+                "key": "riQ36n",
+                "isImgIcon": "1",
+                "url": "https://img.alicdn.com/tfs/TB1JLSww8v0gK0jSZKbXXbK2FXa-56-28.png",
+                "locaLang": "",
+                "enLang": "",
+                "style": {
+                    "width": 56.0,
+                    "height": 28.0
+                },
+                "text": ""
+            }
+        ],
+        "q": "se2719hr",
+        "dataLayer": {
+            "pagetype": "search",
+            "pdt_category": "undefined",
+            "core": {
+                "country": "SG",
+                "layoutType": "desktop",
+                "language": "en",
+                "currencyCode": "$"
+            },
+            "seller_name": "undefined",
+            "v_voya": 1,
+            "search_engine_used": "HA3",
+            "brand_name": "undefined",
+            "page": {
+                "internalSearchTerm": "se2719hr",
+                "bucket_id": "v3",
+                "regCategoryId": "undefined",
+                "xParams": "undefined",
+                "SortingPattern": "default",
+                "filters": [],
+                "rn": "e589212f974964ee99593abc1c55ab5a",
+                "resultNr": 18,
+                "internalSearchResultType": "Search Results"
+            },
+            "seller_id": "undefined",
+            "top_catalog_skus": [
+                "1408408036",
+                "2189850872",
+                "1987128787"
+            ],
+            "brand_id": "undefined"
+        },
+        "column": 2,
+        "bucketId": "v3",
+        "auctionType": 1,
+        "selectedFilters": {}
+    }
+}
