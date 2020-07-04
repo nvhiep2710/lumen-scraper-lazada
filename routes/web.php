@@ -14,4 +14,4 @@
 // $router->get('/', function () use ($router) {
 //     return $router->app->version();
 // });
-$router->get('/', 'ScrapeDataController@index');
+$router->get('/', 'ScraperDataController@index');

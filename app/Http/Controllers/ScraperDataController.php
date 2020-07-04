@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Classes\ScraperClass;
 use DB;
 
-class ScrapeDataController extends Controller
+class ScraperDataController extends Controller
 {
     private $scraperClass;
 
@@ -38,7 +38,6 @@ class ScrapeDataController extends Controller
                 }
                 sleep(60);
         }
-        var_dump('done');
     }
 
     //    ===============================================================================================
@@ -55,14 +54,15 @@ class ScrapeDataController extends Controller
            
 
             if (!$total_page) $last_page = $response['page']['last_page'];
+            
 
             foreach ($response['products'] AS $product_id => $product) {
                 $sql = 'SELECT * FROM wp_posts WHERE post_related_id = ' .$product_id;
                 $result = DB::select($sql);
                 if ($result) continue;
-
-                $detail = isset($this->scrape_lazada_product_detail($product)['product_detail']);
-                $this->db_insert_product($detail);
+                
+                $detail = $this->scrape_lazada_product_detail($product);
+                $this->db_insert_product($detail['product_detail']);
             }
             sleep(60);
         }
@@ -157,45 +157,42 @@ class ScrapeDataController extends Controller
         $data = $json->data->root->fields;
 
         if ($get_title == TRUE) return $data->product->title;
-
         $product_name = trim(substr($product_id, 0, strpos($product_id, '.html')));
         $sale_price = (isset($data->skuInfos->{'0'}->price->salePrice) ? $data->skuInfos->{'0'}->price->salePrice->value : $data->skuInfos->{'0'}->price->originalPrice->value);
         $product_detail = array(
-            'lazada_item_id' => isset($data->primaryKey->itemId),
-            'url' => isset($data->htmlRender->msiteShare->url),
-            'categories' => isset($data->skuInfos->{'0'}->dataLayer->pdt_category),
-            'title' => isset($data->product->title),
-            'name' => isset($product_name),
-            'image_url' => isset($data->htmlRender->msiteShare->image),
-            'short_description' => isset($data->product->highlights),
-            'description' => isset($data->product->desc),
-            'sku' => isset($data->specifications->{$data->primaryKey->skuId}->features->SKU),
+            'lazada_item_id' => $data->primaryKey->itemId?$data->primaryKey->itemId:'',
+            'url' => $data->htmlRender->msiteShare->url?$data->htmlRender->msiteShare->url:'',
+            'categories' => $data->skuInfos->{'0'}->dataLayer->pdt_category?$data->skuInfos->{'0'}->dataLayer->pdt_category:'',
+            'title' => $data->product->title?$data->product->title:'',
+            'name' => $product_name?$product_name:'',
+            'image_url' => $data->htmlRender->msiteShare->image?$data->htmlRender->msiteShare->image:'',
+            'short_description' => $data->product->highlights?$data->product->highlights:'',
+            'description' => isset($data->product->desc)?$data->product->desc:'',
+            'sku' => $data->specifications->{$data->primaryKey->skuId}->features->SKU?$data->specifications->{$data->primaryKey->skuId}->features->SKU:'',
             'attributes' => $this->_get_lazada_product_properties($data),
             'variations' => $this->_get_lazada_product_options($data),
-            'original_price' => isset($data->skuInfos->{'0'}->price->originalPrice->value),
+            'original_price' => isset($data->skuInfos->{'0'}->price->originalPrice->value)?$data->skuInfos->{'0'}->price->originalPrice->value:$sale_price,
             'sale_price' => $sale_price,
         );
 
+        $delivery_options = isset($data->deliveryOptions->{$data->primaryKey->skuId})?$data->deliveryOptions->{$data->primaryKey->skuId}:NULL;
+        if ($delivery_options) {
+            $min_fee = 1000;
+            $shipping_title = '';
+            foreach ($delivery_options as $idx => $option) {
+                if (!isset($option->fee)) continue;
+                if ($option->feeValue < $min_fee) {
+                    $min_fee = $option->feeValue;
+                    $shipping_title = $option->title;
+                }
+            }
 
-        // get shipping fees (if exists)
-        // $delivery_options = isset($data->deliveryOptions->{$data->primaryKey->skuId});
-        // dd($delivery_options);
-        // if ($delivery_options) {
-        //     $min_fee = 1000;
-        //     $shipping_title = '';
-        //     foreach ($delivery_options as $idx => $option) {
-        //         if (!isset($option->fee)) continue;
-        //         if ($option->feeValue < $min_fee) {
-        //             $min_fee = $option->feeValue;
-        //             $shipping_title = $option->title;
-        //         }
-        //     }
-
-        //     $product_detail['shipping'] = array(
-        //         'title' => $shipping_title,
-        //         'fee' => ($min_fee == 1000 ? NULL : $min_fee)
-        //     );
-        // }
+            $product_detail['shipping'] = array(
+                'title' => $shipping_title,
+                'fee' => ($min_fee == 1000 ? NULL : $min_fee)
+            );
+        }
+        
 
         $result['product_detail'] = $product_detail;
         return $result;
@@ -237,7 +234,7 @@ class ScrapeDataController extends Controller
         $prod_description = $detail['description']?$detail['description']:'';
         $original_price = $detail['original_price']?$detail['original_price']:'';
         $sale_price = $detail['sale_price']?$detail['sale_price']:'';
-        $stock = $detail['stock']?$detail['stock']:1000; // default value to make product always in stock
+        $stock = isset($detail['stock'])?$detail['stock']:1000; // default value to make product always in stock
         $sku = $detail['sku']?$detail['sku']:'';
         $image_url = $detail['image_url']?$detail['image_url']:'';
         $categories = $detail['categories']?$detail['categories']:'';
@@ -246,6 +243,9 @@ class ScrapeDataController extends Controller
         if (isset($detail['shipping'])) {
             $shipping_title = $detail['shipping']['title'];
             $shipping_fee = $detail['shipping']['fee'];
+        }else{
+            $shipping_title = NULL;
+            $shipping_fee = NULL;
         }
 
         if (!$prod_name || !$sku || !$image_url || !$attributes) {
@@ -254,11 +254,11 @@ class ScrapeDataController extends Controller
             return $result;
         }
 
-        if (!empty($categories)) {
+        if (empty($categories)) {
             $categories = array(
                 array(
-                    'name' => WOO_UNCATEGORIZED_NAME,
-                    'image_url' => WOO_LOGO_UNCATEGORIZED
+                    'name' => "WOO_UNCATEGORIZED_NAME",
+                    'image_url' => "WOO_LOGO_UNCATEGORIZED"
                 )
             );
         }
@@ -319,7 +319,7 @@ class ScrapeDataController extends Controller
             'INSERT INTO wp_postmeta (post_id, meta_key, meta_value) 
              VALUES 
              (' . $product_id . ', "_sku","' . $sku . '"),
-             (' . $product_id . ', "_regular_price", ' . isset_if_empty($original_price, $sale_price) . '),
+             (' . $product_id . ', "_regular_price", ' . $original_price . '),
              (' . $product_id . ', "total_sales", 0),
              (' . $product_id . ', "_tax_status", "taxable"),
              (' . $product_id . ', "_tax_class", NULL),
@@ -335,19 +335,17 @@ class ScrapeDataController extends Controller
              (' . $product_id . ', "_wc_average_rating", 0),
              (' . $product_id . ', "_wc_review_count", 0),
              (' . $product_id . ', "_price", ' . $sale_price . '),
-             (' . $product_id . ', "_sale_price", ' . isset_if_empty($sale_price, $original_price) . '),
+             (' . $product_id . ', "_sale_price", ' . $sale_price . '),
              (' . $product_id . ', "fifu_image_url", "' . $image_url . '"),
              (' . $product_id . ', "fifu_image_alt", "' . $prod_name . '"),
-             (' . $product_id . ', "_thumbnail_id", ' . $thumbnail_id . ')
-             ';
+             (' . $product_id . ', "_thumbnail_id", ' . $thumbnail_id . ')';
         DB::insert($sql);
 
         $sql =
             'INSERT INTO wp_postmeta (post_id, meta_key, meta_value) 
              VALUES 
              (' . $thumbnail_id . ', "_wp_attached_file",";' . $image_url . '"),
-             (' . $thumbnail_id . ', "_wp_attachment_image_alt", "' . $prod_name . '")
-             ';
+             (' . $thumbnail_id . ', "_wp_attachment_image_alt", "' . $prod_name . '")';
         DB::insert($sql);
 
         $sql =
@@ -357,15 +355,14 @@ class ScrapeDataController extends Controller
                 "' . $sku . '",
                 0,
                 0,
-                '. isset_if_empty($sale_price, $original_price) .',
-                '. isset_if_empty($sale_price, $original_price) .',
+                '. $original_price .',
+                '. $sale_price .',
                 0,
                 '. $stock .',
                 "instock",
                 0,
                 0,
-                0
-             )';
+                0)';
         DB::insert($sql);
 
         $result = $this->db_set_category($product_id, $categories);
@@ -384,7 +381,7 @@ class ScrapeDataController extends Controller
     function db_set_category($product_id, $categories) {
         $result = array('error' => FALSE, 'error_msg' => '', 'response' => NULL);
         
-        if (!isset($product_id) || !is_array_not_empty($categories)) {
+        if (!isset($product_id) || empty($categories)) {
             $result['error'] = TRUE;
             $result['error_msg'] = 'Invalid parameters. Please try again later.';
             return $result;
@@ -424,15 +421,16 @@ class ScrapeDataController extends Controller
                     AND wtt.taxonomy = "product_cat" 
                     WHERE lower(wt.name) = "'.strtolower($category).'" ';
             $fetch = DB::select($sql);
-            $new_category_id = $fetch['term_id'];
+
+            $new_category_id = !empty($fetch)? $fetch['0']->term_id: NULL;
 
             if (!isset($new_category_id)) {
-                $new_category_id = WOO_UNCATEGORIZED_ID;
+                $new_category_id = "WOO_UNCATEGORIZED_ID";
             }
 
             $sql = 'SELECT term_taxonomy_id FROM wp_term_taxonomy WHERE term_id = "'.$new_category_id.'"';
             $fetch = DB::select($sql);
-            $new_term_taxonomy_id = $fetch['term_taxonomy_id'];
+            $new_term_taxonomy_id = $fetch['0']->term_taxonomy_id;
 
             $sql = 'INSERT INTO wp_term_relationships VALUES ('.$product_id.', '.$new_term_taxonomy_id.', 0)';
             DB::insert($sql);
@@ -449,7 +447,7 @@ class ScrapeDataController extends Controller
     function db_set_attribute($product_id, $attributes) {
         $result = array('error' => FALSE, 'error_msg' => '', 'response' => NULL);
 
-        if (!isset($product_id) || !is_array_not_empty($attributes)) {
+        if (!isset($product_id) || empty($attributes)) {
             $result['error'] = TRUE;
             $result['error_msg'] = 'Invalid parameters. Please try again later.';
             return $result;
@@ -460,10 +458,10 @@ class ScrapeDataController extends Controller
 
         foreach ($attributes AS $idx => $attribute) {
             // check duplicate and insert attribute if not duplicate
-            $sql = 'SELECT * FROM wp_woocommerce_attribute_taxonomies WHERE attribute_label = ' . ($attribute['name']);
+            $sql = 'SELECT * FROM wp_woocommerce_attribute_taxonomies WHERE attribute_label = "'.$attribute['name'].'"';
             $query_result = DB::select($sql);
 
-            $attribute_id = $query_result->num_rows ? ($query_result)['attribute_id'] : $this->db_insert_attribute($attribute);
+            $attribute_id = !empty($query_result) ? $query_result['0']->attribute_id : $this->db_insert_attribute($attribute);
             if (!$attribute_id) {
                 $result['error'] = TRUE;
                 $result['error_msg'] = 'Failed to insert attribute';
@@ -475,7 +473,7 @@ class ScrapeDataController extends Controller
                 $sql = 'SELECT t.*, tx.term_taxonomy_id 
                     FROM wp_terms t
                     INNER JOIN wp_term_taxonomy tx ON tx.term_id = t.term_id 
-                    WHERE t.name = ' . ($value);
+                    WHERE t.name = "'.$value.'"';
                 $query_result =  DB::select($sql);
 
                 if (!$query_result) {
@@ -484,8 +482,8 @@ class ScrapeDataController extends Controller
                     return $result;
                 }
 
-                $attribute_value_id = $query_result->num_rows ?
-                    ($query_result)['term_taxonomy_id'] :
+                $attribute_value_id = !empty($query_result) ?
+                    $query_result['0']->term_taxonomy_id :
                     $this->db_insert_attribute_value($attribute, $value);
                 if (!$attribute_value_id) {
                     $result['error'] = TRUE;
@@ -494,7 +492,7 @@ class ScrapeDataController extends Controller
                 }
 
                 // delete all the product attribute value
-                $sql = 'DELETE FROM wp_term_relationship WHERE object_id = ' . $this->CI->db->escape($product_id);
+                $sql = 'DELETE FROM wp_term_relationships WHERE object_id = "'.$product_id.'" ';
                 DB::delete($sql);
 
 
@@ -519,16 +517,15 @@ class ScrapeDataController extends Controller
 
         // insert product meta_value;
         $string_meta_value = $this->_convert_meta_value($meta_value);
-        $sql = 'INSERT INTO wp_postmeta (post_id, meta_key, meta_value) VALUES (
-        "'.$product_id.'",
-        "_product_attributes",
-        '.($string_meta_value).')';
+        $parsedata = addslashes($string_meta_value);
+        $sql ='INSERT INTO wp_postmeta (post_id, meta_key, meta_value) VALUES 
+         (' . $product_id . ', "_product_attributes", "' . $parsedata . '")';
         DB::insert($sql);
 
         $this->db_clear_attribute_cache();
     }
 
-    function db_insert_attribute_value($attribute, $value, $conn) {
+    function db_insert_attribute_value($attribute, $value) {
         $value_name = isset_value($value, '');
         /*
          * Change the character
@@ -540,11 +537,11 @@ class ScrapeDataController extends Controller
         $value_slug = str_replace('&', 'and', $value_slug);
         $value_slug = str_replace(str_split('\\/:*?"<>|\'%,.'), '', $value_slug);
         // insert value
-        $sql = 'INSERT INTO wp_terms (name, slug) VALUES (
-                "'.$value_name.'",
-                "'.$value_slug.'")';
-        $rowAttribute = DB::select($sql);
-        $attribute_value_id = $rowAttribute->id;
+        $terms_data = [
+            'name' => $value_name,
+            'slug' => $value_slug
+        ];
+        $attribute_value_id = DB::table('wp_terms')->insertGetId($terms_data);
       
 
         // insert attribute value metadata
@@ -552,17 +549,18 @@ class ScrapeDataController extends Controller
                 "'.$attribute_value_id.'",
                 "pa_'.strtolower(str_replace( ' ', '-', $attribute['name'])).'",
                 "0")';
-        DB::select($sql);
+        DB::insert($sql);
 
         // insert relation between attribute and value
-        $sql = 'INSERT INTO wp_term_taxonomy (term_id, taxonomy, description) VALUES(
-                "'.$attribute_value_id.'",
-                "pa_'.strtolower(str_replace( ' ', '-', $attribute['name'])).'",
-                "")';
-        $rowTaxonomy = DB::select($sql);
+        $data_term_taxonomy = [
+            'term_id' => $attribute_value_id,
+            'taxonomy' => 'pa_'.strtolower(str_replace( ' ', '-', $attribute['name'])).'',
+            'description' => "",
+        ];
+        $term_taxonomy_id = DB::table('wp_term_taxonomy')->insertGetId($data_term_taxonomy);
 
         // return the id of relation between attribute and value
-        return $rowTaxonomy->id;
+        return $term_taxonomy_id;
     }
 
     function db_clear_attribute_cache() {
@@ -585,9 +583,9 @@ class ScrapeDataController extends Controller
 
         $product_gallery = '';
         foreach ($variations AS $lazada_variation_id => $variation) {
-            $variation_title = $product['post_title'] . ' - ';
+            $variation_title = $product['0']->post_title . ' - ';
             $variation_excerpt = '';
-            $variation_name = $product['post_name'];
+            $variation_name = $product['0']->post_name;
 
             // get variation attribute value
             $insert_variation_meta = array();
@@ -598,10 +596,10 @@ class ScrapeDataController extends Controller
                 $attr = $value_split[0];
                 $value = $value_split[1];
 
-                $sql = 'SELECT * FROM wp_woocommerce_attribute_taxonomies WHERE attribute_label = ' . ($attr);
+                $sql = 'SELECT * FROM wp_woocommerce_attribute_taxonomies WHERE attribute_label = "'.$attr.'" ';
                 $query_attr = DB::select($sql);
 
-                $sql = 'SELECT * FROM wp_terms WHERE name = ' . $value;
+                $sql = 'SELECT * FROM wp_terms WHERE name = "'.$value.'" ';
                 $query_attr_value = DB::select($sql);
 
                 if ($idx) {
@@ -609,14 +607,14 @@ class ScrapeDataController extends Controller
                     $variation_excerpt .= ', ';
                 }
 
-                $variation_title .= $query_attr_value['name'];
-                $variation_excerpt .= $query_attr['attribute_label'] . ': ' . $query_attr_value['name'];
-                $variation_name .= '-' . $query_attr_value['slug'];
+                $variation_title .= $query_attr_value['0']->name;
+                $variation_excerpt .= $query_attr['0']->attribute_label . ': ' . $query_attr_value['0']->name;
+                $variation_name .= '-' . $query_attr_value['0']->slug;
 
                 // insert meta data
                 array_push($insert_variation_meta, array(
-                    'meta_key' => 'attribute_pa_' . $query_attr['attribute_name'],
-                    'meta_value' => $query_attr_value['slug']
+                    'meta_key' => 'attribute_pa_' . $query_attr['0']->attribute_name,
+                    'meta_value' => $query_attr_value['0']->slug
                 ));
             }
 
@@ -669,7 +667,7 @@ class ScrapeDataController extends Controller
                 'post_type' => 'attachment',
                 'post_mime_type' => 'image/jpeg',
             ];
-            $variation_id = DB::table('wp_posts')->insertGetId($photo);
+            $thumbnail_id = DB::table('wp_posts')->insertGetId($photo);
 
             $product_gallery .= $thumbnail_id . ',';
 
@@ -678,11 +676,15 @@ class ScrapeDataController extends Controller
             ('.$product_id.', "_price", "'.$variation['sale_price'].'")';
             DB::insert($sql);
 
+            $price_origin_parse = $variation['original_price']? $variation['original_price']: $variation['sale_price'];
+            $price_sale_parse = $variation['sale_price']? $variation['sale_price']: $variation['original_price'];
+            $stock_parse = $variation['stock']? $variation['stock']: 1000;
+
             $sql =
                 'INSERT INTO wp_postmeta (post_id, meta_key, meta_value) 
              VALUES 
              (' . $variation_id . ', "_sku","' . $variation['sku'] . '"),
-             (' . $variation_id . ', "_regular_price", ' . isset($variation['original_price'], $variation['sale_price']) . '),
+             (' . $variation_id . ', "_regular_price", ' . $price_origin_parse . '),
              (' . $variation_id . ', "total_sales", 0),
              (' . $variation_id . ', "_tax_status", "taxable"),
              (' . $variation_id . ', "_tax_class", NULL),
@@ -693,12 +695,12 @@ class ScrapeDataController extends Controller
              (' . $variation_id . ', "_downloadable", "no"),
              (' . $variation_id . ', "_download_limit", -1),
              (' . $variation_id . ', "_download_expiry", -1),
-             (' . $variation_id . ', "_stock", '. isset_value($variation['stock'], 1000).'),
+             (' . $variation_id . ', "_stock", '. $stock_parse .'),
              (' . $variation_id . ', "_stock_status", "instock"),
              (' . $variation_id . ', "_wc_average_rating", 0),
              (' . $variation_id . ', "_wc_review_count", 0),
-             (' . $variation_id . ', "_price", ' . isset_if_empty($variation['sale_price'], $variation['original_price']) . '),
-             (' . $variation_id . ', "_sale_price", ' . isset_if_empty($variation['sale_price'], $variation['original_price']) . '),
+             (' . $variation_id . ', "_price", ' . $price_sale_parse . '),
+             (' . $variation_id . ', "_sale_price", ' . $price_sale_parse . '),
              (' . $variation_id . ', "fifu_image_url", "' . $variation['image_url'] . '"),
              (' . $variation_id . ', "fifu_image_alt", "' . $variation_name . '"),
              (' . $variation_id . ', "_thumbnail_id", ' . $thumbnail_id . ')
@@ -716,9 +718,9 @@ class ScrapeDataController extends Controller
             // Insert variation attribute meta data
             foreach ($insert_variation_meta AS $insert_data) {
                 $sql = 'INSERT INTO wp_postmeta (post_id, meta_key, meta_value) VALUES (
-                '.($variation_id).',
-                '.($insert_data['meta_key']).',
-                '.($insert_data['meta_value']).'
+                "'.$variation_id.'",
+                "'.$insert_data['meta_key'].'",
+                "'.$insert_data['meta_value'].'"
                 )';
                 DB::insert($sql);
             }
@@ -809,8 +811,8 @@ class ScrapeDataController extends Controller
             $result[$option->skuId] = array(
                 'lazada_option_id' => $option->skuId,
                 'sku' => $option->innerSkuId,
-                'attribute' => isset($attribute),
-                'original_price' => isset($info->price->originalPrice->value, $info->price->salePrice->value),
+                'attribute' => $attribute,
+                'original_price' => isset($info->price->originalPrice->value)?$info->price->originalPrice->value:$info->price->salePrice->value,
                 'sale_price' => $sale_price,
                 'stock' => $info->stock,
                 'url' => 'https://lazada.sg' . $option->pagePath,
@@ -819,6 +821,39 @@ class ScrapeDataController extends Controller
         }
 
         return $result;
+    }
+
+    function db_insert_attribute($attribute, $conn) {
+        $label = isset_if_empty($attribute['name'], '');
+        $name = $label ? strtolower(str_replace( ' ', '-', $label)) : '';
+
+        // insert attribute
+        $data = [
+            'attribute_name' => $name,
+            'attribute_label' => $label,
+            'attribute_type' => 'select',
+            'attribute_orderby' => 'menu_order',
+            'attribute_public' => '0'
+        ];
+        $attribute_id = DB::table('wp_woocommerce_attribute_taxonomies')->insertGetId($data);
+
+        return $attribute_id;
+    }
+
+    private function _convert_meta_value($value, $index = NULL) {
+        if (!is_array($value)) {
+            $result = 's:'.strlen($index).':"'.$index.'";';
+            $result .= 's:'.strlen($value).':"'.$value.'";';
+            return $result;
+        } else {
+            $result = $index ? 's:'.strlen($index).':"'.$index.'";' : '';
+            $result .= 'a:'.sizeof($value).':{';
+            foreach ($value AS $idx => $val) {
+                $result .= $this->_convert_meta_value($val, $idx);
+            }
+            $result .= '}';
+            return $result;
+        }
     }
 //    ===============================================================================================
 }
