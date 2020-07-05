@@ -50,6 +50,7 @@ class ScraperDataController extends Controller
         for ($i = 1; $i <= $last_page; $i++) {
             
             $response = $this->scrape_lazada_search_result($keyword, $i);
+            
             if ($response['error']) return $response;
            
 
@@ -62,7 +63,7 @@ class ScraperDataController extends Controller
                 if ($result) continue;
                 
                 $detail = $this->scrape_lazada_product_detail($product);
-                $this->db_insert_product($detail['product_detail']);
+                $hiep = $this->db_insert_product($detail['product_detail']);
             }
             sleep(60);
         }
@@ -396,11 +397,12 @@ class ScraperDataController extends Controller
         $fetch = DB::select($sql);
 
         while($row = $fetch){
-            $old_category_id = $row['term_id'];
+            
+            $old_category_id = $row['0']->term_id;
 
             $sql = 'SELECT term_taxonomy_id FROM wp_term_taxonomy WHERE term_id = '.$old_category_id;
             $fetch2 = DB::select($sql);
-            $old_term_taxonomy_id = $fetch2['term_taxonomy_id'];
+            $old_term_taxonomy_id = $fetch2['0']->term_taxonomy_id;
 
             $sql = 'UPDATE wp_term_taxonomy set count = (count - 1) where taxonomy = "product_cat" AND term_id = '.$old_category_id;
             DB::update($sql);
@@ -422,7 +424,7 @@ class ScraperDataController extends Controller
                     WHERE lower(wt.name) = "'.strtolower($category).'" ';
             $fetch = DB::select($sql);
 
-            $new_category_id = !empty($fetch)? $fetch['0']->term_id: NULL;
+            $new_category_id = !empty($fetch) ? $fetch['0']->term_id : NULL;
 
             if (!isset($new_category_id)) {
                 $new_category_id = "WOO_UNCATEGORIZED_ID";
@@ -435,10 +437,10 @@ class ScraperDataController extends Controller
             $sql = 'INSERT INTO wp_term_relationships VALUES ('.$product_id.', '.$new_term_taxonomy_id.', 0)';
             DB::insert($sql);
 
-            $sql = 'UPDATE wp_term_taxonomy SET count = (count + 1) WHERE taxonomy = "product_cat" AND term_id = '.$new_category_id;
+            $sql = 'UPDATE wp_term_taxonomy SET count = (count + 1) WHERE taxonomy = "product_cat" AND term_id =  "'.$new_category_id.'"';
             DB::update($sql);
 
-            $sql = 'UPDATE wp_termmeta SET meta_value = (meta_value + 1) WHERE meta_key = "product_count_product_cat" and term_id = '.$new_category_id;
+            $sql = 'UPDATE wp_termmeta SET meta_value = (meta_value + 1) WHERE meta_key = "product_count_product_cat" and term_id = "'.$new_category_id.'"';
             DB::update($sql);
         }
         return $result;
