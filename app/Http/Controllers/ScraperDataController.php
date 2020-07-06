@@ -9,7 +9,6 @@ use DB;
 class ScraperDataController extends Controller
 {
     private $scraperClass;
-
     /**
      * Create a new controller instance.
      *
@@ -52,18 +51,16 @@ class ScraperDataController extends Controller
             $response = $this->scrape_lazada_search_result($keyword, $i);
             
             if ($response['error']) return $response;
-           
 
-            if (!$total_page) $last_page = $response['page']['last_page'];
-            
+            if (!$total_page) $last_page = $response['page']['last_page']; 
 
             foreach ($response['products'] AS $product_id => $product) {
                 $sql = 'SELECT * FROM wp_posts WHERE post_related_id = ' .$product_id;
                 $result = DB::select($sql);
-                if ($result) continue;
+                if (!empty($result)) continue;
                 
                 $detail = $this->scrape_lazada_product_detail($product);
-                $hiep = $this->db_insert_product($detail['product_detail']);
+                $this->db_insert_product($detail['product_detail']);
             }
             sleep(60);
         }
@@ -82,7 +79,7 @@ class ScraperDataController extends Controller
         
         // response from url return json
         
-        $url = base_path("public/csv/test.json");
+        $url = base_path("public/json/hiep.json");
         $data = json_decode(file_get_contents($url));
         if (!isset($data->mainInfo->totalResults)) {
             $result['error'] = TRUE;
@@ -132,6 +129,7 @@ class ScraperDataController extends Controller
         }
 
         $url = ($full_url == TRUE ? $product_id : 'lazada.sg/products/' . $product_id);
+        
         if (!$this->scraperClass->set_url($url)) {
             $result['error'] = TRUE;
             $result['error_msg'] = 'Invalid Url<br>Please update the url';
@@ -158,6 +156,7 @@ class ScraperDataController extends Controller
         $data = $json->data->root->fields;
 
         if ($get_title == TRUE) return $data->product->title;
+        
         $product_name = trim(substr($product_id, 0, strpos($product_id, '.html')));
         $sale_price = (isset($data->skuInfos->{'0'}->price->salePrice) ? $data->skuInfos->{'0'}->price->salePrice->value : $data->skuInfos->{'0'}->price->originalPrice->value);
         $product_detail = array(
@@ -258,8 +257,8 @@ class ScraperDataController extends Controller
         if (empty($categories)) {
             $categories = array(
                 array(
-                    'name' => "WOO_UNCATEGORIZED_NAME",
-                    'image_url' => "WOO_LOGO_UNCATEGORIZED"
+                    'name' => "Uncategorized",
+                    'image_url' => "https://geniebook.com/bubble/wp-content/uploads/woocommerce-placeholder.png"
                 )
             );
         }
@@ -424,18 +423,28 @@ class ScraperDataController extends Controller
                     WHERE lower(wt.name) = "'.strtolower($category).'" ';
             $fetch = DB::select($sql);
 
-            $new_category_id = !empty($fetch) ? $fetch['0']->term_id : NULL;
+            $new_category_id = !empty($fetch) ? $fetch['0']->term_id : '';
 
-            if (!isset($new_category_id)) {
-                $new_category_id = "WOO_UNCATEGORIZED_ID";
+            if ($new_category_id === '') {
+                // create new category
+                /*
+                 * Temporarily remarked to prevent unwanted category to be created and to be viewed in bubbly gift shop
+                 */
+            //    $result = $this->db_create_category($category);
+            //    $new_category_id = $result['response'];
+               $new_category_id = 1;
             }
 
             $sql = 'SELECT term_taxonomy_id FROM wp_term_taxonomy WHERE term_id = "'.$new_category_id.'"';
             $fetch = DB::select($sql);
             $new_term_taxonomy_id = $fetch['0']->term_taxonomy_id;
 
-            $sql = 'INSERT INTO wp_term_relationships VALUES ('.$product_id.', '.$new_term_taxonomy_id.', 0)';
-            DB::insert($sql);
+            $sql = 'SELECT * FROM wp_term_relationships WHERE object_id = '.$product_id.' AND term_taxonomy_id = "1"';
+            $check = DB::select($sql);
+            if(empty($check)){
+                $sql = 'INSERT INTO wp_term_relationships VALUES ('.$product_id.', '.$new_term_taxonomy_id.', 0)';
+                DB::insert($sql);
+            }
 
             $sql = 'UPDATE wp_term_taxonomy SET count = (count + 1) WHERE taxonomy = "product_cat" AND term_id =  "'.$new_category_id.'"';
             DB::update($sql);
@@ -462,6 +471,12 @@ class ScraperDataController extends Controller
             // check duplicate and insert attribute if not duplicate
             $sql = 'SELECT * FROM wp_woocommerce_attribute_taxonomies WHERE attribute_label = "'.$attribute['name'].'"';
             $query_result = DB::select($sql);
+
+            if (!$query_result) {
+                $result['error'] = TRUE;
+                $result['error_msg'] = 'connect db error';
+                return $result;
+            }
 
             $attribute_id = !empty($query_result) ? $query_result['0']->attribute_id : $this->db_insert_attribute($attribute);
             if (!$attribute_id) {
@@ -494,9 +509,8 @@ class ScraperDataController extends Controller
                 }
 
                 // delete all the product attribute value
-                $sql = 'DELETE FROM wp_term_relationships WHERE object_id = "'.$product_id.'" ';
+                $sql = 'DELETE FROM wp_term_relationships WHERE object_id = '.$product_id.' ';
                 DB::delete($sql);
-
 
                 // tag the product with the attribute value
                 $sql = 'INSERT INTO wp_term_relationships (object_id, term_taxonomy_id) VALUES(
@@ -528,7 +542,7 @@ class ScraperDataController extends Controller
     }
 
     function db_insert_attribute_value($attribute, $value) {
-        $value_name = isset_value($value, '');
+        $value_name = $value ? $value : '';
         /*
          * Change the character
          * 1. whitespace to -
@@ -678,9 +692,9 @@ class ScraperDataController extends Controller
             ('.$product_id.', "_price", "'.$variation['sale_price'].'")';
             DB::insert($sql);
 
-            $price_origin_parse = $variation['original_price']? $variation['original_price']: $variation['sale_price'];
-            $price_sale_parse = $variation['sale_price']? $variation['sale_price']: $variation['original_price'];
-            $stock_parse = $variation['stock']? $variation['stock']: 1000;
+            $price_origin_parse = $variation['original_price'] ? $variation['original_price'] : $variation['sale_price'];
+            $price_sale_parse = $variation['sale_price'] ? $variation['sale_price'] : $variation['original_price'];
+            $stock_parse = $variation['stock'] ? $variation['stock'] : 1000;
 
             $sql =
                 'INSERT INTO wp_postmeta (post_id, meta_key, meta_value) 
@@ -726,17 +740,19 @@ class ScraperDataController extends Controller
                 )';
                 DB::insert($sql);
             }
-
-            // Change product type to variation
-            $sql = 'INSERT INTO wp_term_relationships (object_id, term_taxonomy_id, term_order) VALUES (
-            ' . ($product_id) . ', "4", "0")';
-            DB::insert($sql);
+            $sql = 'SELECT * FROM wp_term_relationships WHERE object_id = '.$product_id.' AND term_taxonomy_id = "4"';
+            $check = DB::select($sql);
+            if(empty($check)){
+                // Change product type to variation
+                $sql = 'INSERT INTO wp_term_relationships (object_id, term_taxonomy_id, term_order) VALUES (
+                "' . ($product_id) . '", "4", "0")';
+                DB::insert($sql);
+            }
         }
-
         $sql = 'INSERT INTO wp_postmeta (post_id, meta_key, meta_value) VALUES (
         ' . ($product_id) . ',
         "_product_image_gallery",
-        ' . (substr($product_gallery, 0, -1)) . ')';
+        "' . (substr($product_gallery, 0, -1)) . '")';
         DB::insert($sql);
 
         $result['response'] = 'success';
@@ -754,6 +770,7 @@ class ScraperDataController extends Controller
         $properties = $scrape_data->productOption->skuBase->properties;
         foreach ($properties AS $property) {
             $values = array();
+            dd($properties);
             foreach ($property->values AS $value) {
                 if (!isset($value->name)) {
                     // foreach from variation in scrape data
@@ -813,7 +830,7 @@ class ScraperDataController extends Controller
             $result[$option->skuId] = array(
                 'lazada_option_id' => $option->skuId,
                 'sku' => $option->innerSkuId,
-                'attribute' => $attribute,
+                'attribute' => isset($attribute)?$attribute:'',
                 'original_price' => isset($info->price->originalPrice->value)?$info->price->originalPrice->value:$info->price->salePrice->value,
                 'sale_price' => $sale_price,
                 'stock' => $info->stock,
@@ -857,5 +874,33 @@ class ScraperDataController extends Controller
             return $result;
         }
     }
+
+    function db_create_category($name) {
+        $result = array('error' => FALSE, 'error_msg' => '', 'response' => NULL);
+
+        //INSERT CATEGORY
+        /*
+         * Change the character
+         * 1. whitespace to -
+         * 2. & to and
+         * 3. \/:*?"<>|'%,. to empty space
+         */
+        $slug = str_replace(' ', '-', strtolower($name));
+        $slug = str_replace('&', 'and', $slug);
+        $slug = str_replace(str_split('\\/:*?"<>|\'%,.'), '', $slug);
+
+        $data = [
+            'name' => $name,
+            'slug' => $slug,
+        ];
+        $term_id = DB::table('wp_terms')->insertGetId($data);
+
+        $sql = 'INSERT INTO wp_term_taxonomy (term_id, taxonomy, description) VALUES ('.$term_id.', "product_cat", "")';
+        DB::insert($sql);
+
+        $result['response'] = $term_id; // category id
+        return $result;
+    }
+    
 //    ===============================================================================================
 }
